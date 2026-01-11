@@ -1,0 +1,223 @@
+.projects {
+  background-color: rgba(17, 24, 39, 0.3);
+  position: relative;
+}
+
+.projects::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.projects-filters {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-xl);
+}
+
+.filter-btn {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: transparent;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+  border-radius: 8px;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.filter-btn.active {
+  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
+  border-color: transparent;
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-xl);
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.project-card {
+  width: 100%;
+  min-height: 250px;
+  border-radius: 16px;
+  background: rgba(30, 35, 48, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.project-card::before {
+  content: "";
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  border-radius: 50%;
+  border: 35px solid rgba(59, 130, 246, 0.08);
+  transition: all 0.8s ease;
+  filter: blur(0.5rem);
+}
+
+.project-card:hover {
+  border-color: var(--color-border-hover);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.project-card:hover::before {
+  width: 140px;
+  height: 140px;
+  top: -30%;
+  left: 50%;
+  filter: blur(0rem);
+  border-color: rgba(59, 130, 246, 0.15);
+}
+
+.project-text {
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-text-primary);
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+
+.project-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+}
+
+.project-subtitle {
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.project-tech {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--color-accent);
+  opacity: 0.9;
+}
+
+.project-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.project-btn {
+  border: none;
+  flex: 1;
+  height: 45px;
+  background-color: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-btn:first-child {
+  border-right: 1px solid var(--color-border);
+}
+
+.project-btn:hover {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.project-btn:active {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.svg-icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-accent);
+  transition: all var(--transition-base);
+}
+
+.project-btn:hover .svg-icon {
+  stroke: var(--color-accent-hover);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    min-height: 230px;
+  }
+  
+  .project-text {
+    padding: 16px;
+  }
+  
+  .project-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .project-subtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .project-btn {
+    height: 40px;
+  }
+  
+  .svg-icon {
+    width: 20px;
+    height: 20px;
+  }
+}

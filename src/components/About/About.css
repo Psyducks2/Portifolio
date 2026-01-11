@@ -1,0 +1,37 @@
+.about {
+  background-color: rgba(17, 24, 39, 0.3);
+  position: relative;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-text-wrapper {
+  margin-bottom: var(--spacing-xl);
+}
+
+.about-text {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .about-text {
+    font-size: var(--font-size-base);
+    text-align: left;
+  }
+}

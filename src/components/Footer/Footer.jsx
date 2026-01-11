@@ -13,7 +13,7 @@ const Footer = () => {
           <p className="footer-text">
             {t.footer.developed}{' '}
             <a
-              href="https://github.com/Psyducks2/portfolio"
+              href="https://github.com/Psyducks2/Portifolio"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"

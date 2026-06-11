@@ -160,20 +160,55 @@
 @media (max-width: 960px) {
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 56px;
+    gap: 48px;
   }
 
   .about-visual {
-    max-width: 260px;
+    max-width: 220px;
     margin: 0 auto;
   }
 
-  .about-badge--1 { right: -10px; }
-  .about-badge--2 { left: -10px; }
+  .about-badge--1 { right: -8px; bottom: -8px; }
+  .about-badge--2 { left: -8px; top: -8px; }
 }
 
 @media (max-width: 768px) {
+  .about-grid {
+    gap: 36px;
+    margin-top: 36px;
+  }
+
+  .about-visual {
+    max-width: 180px;
+  }
+
   .about-text p {
-    font-size: var(--font-size-base);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+  }
+
+  .about-chips {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-visual {
+    max-width: 160px;
+  }
+
+  /* Badges menores em mobile muito pequeno */
+  .about-badge {
+    font-size: 11px;
+    padding: 6px 10px;
+    gap: 5px;
+  }
+
+  .about-badge--1 { right: -4px; bottom: -4px; }
+  .about-badge--2 { left: -4px; top: -4px; }
+
+  .about-text p {
+    font-size: 14.5px;
   }
 }

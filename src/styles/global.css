@@ -258,7 +258,13 @@ img {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
   }
 }
 
@@ -270,7 +276,13 @@ img {
 
 @media (max-width: 768px) {
   .section {
-    padding: 72px 0;
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 52px 0;
   }
 }
 
@@ -338,9 +350,32 @@ img {
 }
 
 @media (max-width: 768px) {
+  .section-title {
+    letter-spacing: -1px;
+  }
+
   .section-subtitle,
   .section-sub {
     font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: clamp(26px, 8vw, 38px);
+    letter-spacing: -0.5px;
+  }
+
+  .section-sub,
+  .section-subtitle {
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .section-tag {
+    font-size: 10px;
+    letter-spacing: 2px;
   }
 }
 
@@ -516,10 +551,18 @@ img {
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--text-mid);
-  padding: 7px 16px;
+  padding: 6px 14px;
   border-radius: 100px;
   transition: var(--transition);
   letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .chip {
+    font-size: 11px;
+    padding: 5px 12px;
+  }
 }
 
 .chip:hover {

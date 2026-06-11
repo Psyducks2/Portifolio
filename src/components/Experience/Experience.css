@@ -177,14 +177,74 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .exp-timeline {
-    padding-left: 32px;
+    padding-left: 28px;
+    margin-top: 36px;
   }
 
   .exp-dot {
-    left: -40px;
+    left: -36px;
+    width: 16px;
+    height: 16px;
+    top: 16px;
   }
 
   .exp-header {
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .exp-role {
+    font-size: 18px;
+  }
+
+  .exp-bullets li {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 480px) {
+  .exp-timeline {
+    padding-left: 22px;
+    margin-top: 28px;
+  }
+
+  .exp-timeline::before {
+    left: 0;
+  }
+
+  .exp-dot {
+    left: -30px;
+    width: 14px;
+    height: 14px;
+    top: 18px;
+  }
+
+  .exp-dot-inner {
+    width: 5px;
+    height: 5px;
+  }
+
+  .exp-item {
+    margin-bottom: 28px;
+  }
+
+  .exp-role {
+    font-size: 16px;
+  }
+
+  .exp-period {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .exp-company {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .exp-bullets li {
+    font-size: 13.5px;
+    padding-left: 14px;
   }
 }

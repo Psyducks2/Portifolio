@@ -112,22 +112,54 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .contact-links {
     grid-template-columns: 1fr;
+    gap: 10px;
+    max-width: 420px;
+    margin: 0 auto;
   }
 
   .contact-link {
-    min-height: 130px;
+    min-height: 80px;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 20px 24px;
-    gap: 20px;
+    padding: 18px 20px;
+    gap: 18px;
     text-align: left;
+    border-radius: var(--radius);
   }
 
   .contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
     flex-shrink: 0;
     margin-bottom: 0;
+  }
+
+  .contact-label {
+    font-size: 10px;
+  }
+
+  .contact-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    gap: 8px;
+  }
+
+  .contact-link {
+    padding: 16px 18px;
+    gap: 14px;
+  }
+
+  .contact-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
   }
 }

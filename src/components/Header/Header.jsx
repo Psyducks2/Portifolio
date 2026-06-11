@@ -10,6 +10,7 @@ const Header = () => {
   const [progress, setProgress] = useState(0)
   const [scrolled, setScrolled] = useState(false)
   const [showQRModal, setShowQRModal] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,47 +23,94 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Fecha menu ao redimensionar para desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) setMenuOpen(false)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // Bloqueia scroll quando menu mobile está aberto
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const handleNavClick = () => setMenuOpen(false)
+
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <div className="scroll-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
+    <>
+      <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
+        <div className="scroll-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
 
-      <div className="container header-container">
-        <a href="#hero" className="logo">
-          <span className="logo-name">Luis</span>
-          <span className="logo-dot">.</span>
-        </a>
+        <div className="container header-container">
+          <a href="#hero" className="logo" onClick={handleNavClick}>
+            <span className="logo-name">Luis</span>
+            <span className="logo-dot">.</span>
+          </a>
 
-        <nav className="nav">
-          <ul className="nav-links">
-            <li><a href="#about">{t.nav.about}</a></li>
-            <li><a href="#skills">{t.nav.skills}</a></li>
-            <li><a href="#experience">{t.nav.experience}</a></li>
-            <li><a href="#projects">{t.nav.projects}</a></li>
-          </ul>
-        </nav>
+          <nav className="nav">
+            <ul className="nav-links">
+              <li><a href="#about">{t.nav.about}</a></li>
+              <li><a href="#skills">{t.nav.skills}</a></li>
+              <li><a href="#experience">{t.nav.experience}</a></li>
+              <li><a href="#projects">{t.nav.projects}</a></li>
+            </ul>
+          </nav>
 
-        <div className="header-actions">
-          <button 
-            className="qr-btn" 
-            onClick={() => setShowQRModal(true)} 
-            aria-label="Gerar QR Code"
-            title="QR Code"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="14" y="14" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" />
-              <line x1="7" y1="7" x2="7.01" y2="7" />
-              <line x1="17" y1="7" x2="17.01" y2="7" />
-              <line x1="17" y1="17" x2="17.01" y2="17" />
-              <line x1="7" y1="17" x2="7.01" y2="17" />
-            </svg>
-          </button>
-          <LanguageToggle />
-          <a href="#contact" className="btn btn-primary nav-cta">{t.nav.contact}</a>
+          <div className="header-actions">
+            <button
+              className="qr-btn"
+              onClick={() => setShowQRModal(true)}
+              aria-label="Gerar QR Code"
+              title="QR Code"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" />
+                <line x1="7" y1="7" x2="7.01" y2="7" />
+                <line x1="17" y1="7" x2="17.01" y2="7" />
+                <line x1="17" y1="17" x2="17.01" y2="17" />
+                <line x1="7" y1="17" x2="7.01" y2="17" />
+              </svg>
+            </button>
+            <LanguageToggle />
+            <a href="#contact" className="btn btn-primary nav-cta">{t.nav.contact}</a>
+
+            {/* Hamburger */}
+            <button
+              className={`hamburger${menuOpen ? ' is-open' : ''}`}
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+              aria-expanded={menuOpen}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
+
+      {/* Mobile Nav Drawer */}
+      <nav className={`mobile-nav${menuOpen ? ' is-open' : ''}`} aria-hidden={!menuOpen}>
+        <ul className="mobile-nav-links">
+          <li><a href="#about" onClick={handleNavClick}>{t.nav.about}</a></li>
+          <li><a href="#skills" onClick={handleNavClick}>{t.nav.skills}</a></li>
+          <li><a href="#experience" onClick={handleNavClick}>{t.nav.experience}</a></li>
+          <li><a href="#projects" onClick={handleNavClick}>{t.nav.projects}</a></li>
+        </ul>
+        <div className="mobile-nav-bottom">
+          <LanguageToggle />
+          <a href="#contact" className="btn btn-primary mobile-nav-cta" onClick={handleNavClick}>
+            {t.nav.contact}
+          </a>
+        </div>
+      </nav>
 
       {showQRModal && (
         <div className="modal-overlay" onClick={() => setShowQRModal(false)}>
@@ -74,14 +122,14 @@ const Header = () => {
               </svg>
             </button>
             <div className="modal-header">
-              <h3>Scan Me! 📱</h3>
+              <h3>Scan Me</h3>
               <p>{language === 'pt' ? 'Escaneie para abrir no celular' : 'Scan to open on mobile'}</p>
             </div>
             <div className="modal-body">
               <div className="qr-container">
-                <img 
-                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=0D1526&data=${encodeURIComponent(window.location.href)}`} 
-                  alt="QR Code" 
+                <img
+                  src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=0D1526&data=${encodeURIComponent(window.location.href)}`}
+                  alt="QR Code"
                   className="qr-image"
                 />
               </div>
@@ -89,7 +137,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
 

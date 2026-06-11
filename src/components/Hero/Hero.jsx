@@ -6,43 +6,104 @@ const Hero = () => {
   const { language } = useLanguage()
   const t = strings[language]
 
-  const scrollToProjects = () => {
-    const element = document.getElementById('projects')
-    element?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToProjects = (e) => {
+    e.preventDefault()
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  const getGreeting = () => {
+    const hours = new Date().getHours()
+    if (hours >= 5 && hours < 12) return t.hero.greetingMorning
+    if (hours >= 12 && hours < 18) return t.hero.greetingAfternoon
+    return t.hero.greetingEvening
+  }
+
+  const [firstName, ...rest] = t.hero.name.split(' ')
+  const lastName = rest.join(' ')
+  const [titleBefore, titleAfter] = t.hero.title.split(t.hero.titleHighlight)
+
   return (
-    <section className="hero section">
-      <div className="container">
-        <div className="hero-content">
-          <div className="hero-image-wrapper">
-            <div className="hero-image-placeholder">
-              <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="100" cy="100" r="100" fill="rgba(59, 130, 246, 0.2)"/>
-                <circle cx="100" cy="80" r="30" fill="rgba(251, 251, 251, 0.9)"/>
-                <path d="M40 160 Q100 140 160 160" stroke="rgba(251, 251, 251, 0.9)" strokeWidth="20" strokeLinecap="round"/>
-              </svg>
-            </div>
+    <section id="hero" className="hero section">
+      <div className="hero-grid" aria-hidden="true"></div>
+      <div className="hero-glow" aria-hidden="true"></div>
+      <div className="hero-glow-amber" aria-hidden="true"></div>
+
+      <div className="hero-float" aria-hidden="true">
+        <div className="hero-float-bar">
+          <span className="hf-dot hf-dot--red" />
+          <span className="hf-dot hf-dot--yellow" />
+          <span className="hf-dot hf-dot--green" />
+          <span className="hf-filename">developer.ts</span>
+        </div>
+        <div className="hero-float-body">
+          <div className="hf-line">
+            <span className="hf-kw">const</span>{' '}
+            <span className="hf-var">luis</span>{' '}
+            <span className="hf-op">=</span>{' '}
+            <span className="hf-brace">{'{'}</span>
           </div>
-          <div className="hero-text">
-            <h1 className="hero-greeting">{t.hero.greeting}</h1>
-            <h2 className="hero-name">{t.hero.name}</h2>
-            <h3 className="hero-title">{t.hero.title}</h3>
-            <p className="hero-subtitle">{t.hero.subtitle}</p>
-            <div className="hero-buttons">
-              <button className="btn btn-primary" onClick={scrollToProjects}>
-                {t.hero.btnProjects}
-              </button>
-              <a 
-                href="https://www.linkedin.com/in/luis-roberto-4aa69b30a/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-              >
-                {t.hero.btnLinkedIn}
-              </a>
-            </div>
+          <div className="hf-line hf-indent">
+            <span className="hf-key">role</span>
+            <span className="hf-op">:</span>{' '}
+            <span className="hf-str">"Tech Lead"</span><span className="hf-punct">,</span>
           </div>
+          <div className="hf-line hf-indent">
+            <span className="hf-key">stack</span>
+            <span className="hf-op">:</span>{' '}
+            <span className="hf-brace">[</span>
+            <span className="hf-str">"React"</span>
+            <span className="hf-punct">, </span>
+            <span className="hf-str">"Node"</span>
+            <span className="hf-punct">, </span>
+            <span className="hf-str">"Lua"</span>
+            <span className="hf-brace">]</span><span className="hf-punct">,</span>
+          </div>
+          <div className="hf-line hf-indent">
+            <span className="hf-key">available</span>
+            <span className="hf-op">:</span>{' '}
+            <span className="hf-bool">true</span>
+          </div>
+          <div className="hf-line">
+            <span className="hf-brace">{'}'}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="container hero-content">
+        <span className="eyebrow">{t.hero.eyebrow}</span>
+
+        <p className="hero-greeting">{getGreeting()}</p>
+        <h1 className="hero-name">
+          <span className="hero-name-first">{firstName}</span>
+          <br />
+          <span className="hero-name-last">{lastName}</span>
+        </h1>
+
+        <h2 className="hero-title">
+          {titleBefore}<strong>{t.hero.titleHighlight}</strong>{titleAfter}
+        </h2>
+
+        <p className="hero-desc">{t.hero.desc}</p>
+
+        <div className="hero-actions">
+          <a href="#projects" className="btn btn-primary" onClick={scrollToProjects}>
+            <span>{t.hero.btnProjects}</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#contact" className="btn btn-secondary">
+            {t.hero.btnContact}
+          </a>
+        </div>
+
+        <div className="hero-stats">
+          {t.hero.stats.map((stat, index) => (
+            <div className="stat-item" key={index}>
+              <span className="stat-num">{stat.value}</span>
+              <span className="stat-label">{stat.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

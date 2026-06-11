@@ -1,12 +1,30 @@
 export const strings = {
   pt: {
+    nav: {
+      about: "Sobre",
+      skills: "Skills",
+      experience: "Experiência",
+      projects: "Projetos",
+      contact: "Contato"
+    },
     hero: {
-      greeting: "Olá, sou",
+      eyebrow: "Disponível para novos projetos",
+      greetingMorning: "Bom dia! Eu sou",
+      greetingAfternoon: "Boa tarde! Eu sou",
+      greetingEvening: "Boa noite! Eu sou",
       name: "Luis Roberto",
-      title: "Desenvolvedor Full Stack",
-      subtitle: "Especialista em lógica complexa, migrando de Game Dev (Lua/C) para Web & Mobile. Líder de desenvolvimento na ArrowLab.",
+      title: "Desenvolvedor Full Stack & Tech Lead",
+      titleHighlight: "Full Stack",
+      desc: "Especialista em lógica complexa, migrando de Game Development (Lua/C, FiveM/RedM) para Web & Mobile. Hoje atuo como Tech Lead, liderando equipes e construindo produtos do zero — do backend à interface.",
       btnProjects: "Ver Projetos",
-      btnLinkedIn: "LinkedIn"
+      btnContact: "Fale comigo",
+      btnLinkedIn: "LinkedIn",
+      stats: [
+        { value: "4+", label: "anos com Lua / FiveM" },
+        { value: "8", label: "projetos no portfólio" },
+        { value: "5+", label: "sistemas entregues" },
+        { value: "20", label: "anos de idade" }
+      ]
     },
     services: {
       title: "O que faço",
@@ -29,14 +47,158 @@ export const strings = {
       }
     },
     about: {
-      title: "Sobre Mim",
-      text: "Desenvolvedor Full Stack com experiência sólida em lógica complexa e resolução de problemas desafiadores. Minha trajetória começou no desenvolvimento de jogos usando Lua e C, onde desenvolvi habilidades profundas em algoritmos e otimização de performance. Atualmente, estou em transição para o ecossistema Web & Mobile, aplicando minha experiência em desenvolvimento de software para criar soluções modernas e escaláveis. Sou um dos líderes de desenvolvimento na ArrowLab, uma startup focada em inovação tecnológica. Sou especialista em transformar desafios técnicos complexos em código limpo e eficiente, sempre focando em qualidade e performance."
+      tag: "Sobre mim",
+      title: "Quem é Luis Roberto",
+      paragraphs: [
+        "Sou desenvolvedor full stack de Manaus, AM, com uma trajetória que começou no <strong>Game Development</strong> — escrevendo sistemas em Lua e C para servidores FiveM e RedM, onde aprendi a resolver problemas de lógica complexa sob restrições reais de performance.",
+        "Hoje aplico essa base no ecossistema <strong>Web & Mobile</strong>, construindo aplicações com React, Node.js e TypeScript. Atuo como <strong>Tech Lead</strong>, liderando equipes, definindo arquitetura e fazendo code review em projetos que vão do MVP à produção.",
+        "Estou cursando Análise e Desenvolvimento de Sistemas e me dedico a transformar ideias em produtos reais — sempre buscando código limpo, decisões de arquitetura sólidas e um resultado visual à altura do trabalho técnico."
+      ],
+      chips: [
+        "📍 Manaus, AM",
+        "🎓 ADS — FAMETRO",
+        "🇧🇷 PT nativo",
+        "🇺🇸 EN avançado",
+        "🚀 Disponível"
+      ]
     },
     skills: {
-      title: "Habilidades",
-      subtitle: "Tecnologias e ferramentas que domino"
+      tag: "Habilidades",
+      title: "Tecnologias e ferramentas",
+      subtitle: "Da lógica de jogos em Lua ao desenvolvimento web moderno — um conjunto de ferramentas construído na prática, projeto após projeto.",
+      categories: [
+        {
+          icon: "🎨",
+          variant: "sky",
+          title: "Frontend",
+          tags: [
+            { label: "React", variant: "highlight" },
+            { label: "JavaScript", variant: "highlight" },
+            { label: "TypeScript" },
+            { label: "HTML5" },
+            { label: "CSS3" }
+          ]
+        },
+        {
+          icon: "⚙️",
+          variant: "sky",
+          title: "Backend & Dados",
+          tags: [
+            { label: "Node.js", variant: "highlight" },
+            { label: "SQL" },
+            { label: "REST APIs" },
+            { label: "MySQL" }
+          ]
+        },
+        {
+          icon: "🎮",
+          variant: "amber",
+          title: "Game Development",
+          tags: [
+            { label: "Lua", variant: "warm" },
+            { label: "C" },
+            { label: "FiveM" },
+            { label: "RedM" },
+            { label: "VORP Core" }
+          ]
+        },
+        {
+          icon: "📱",
+          variant: "sky",
+          title: "Mobile",
+          tags: [
+            { label: "Android" },
+            { label: "Java" }
+          ]
+        },
+        {
+          icon: "👨‍💼",
+          variant: "amber",
+          title: "Liderança & Soft Skills",
+          tags: [
+            { label: "Tech Lead", variant: "warm" },
+            { label: "Mentoria" },
+            { label: "Code Review" },
+            { label: "Gestão de Projetos" }
+          ]
+        },
+        {
+          icon: "🛠️",
+          variant: "sky",
+          title: "Ferramentas & Workflow",
+          tags: [
+            { label: "Git" },
+            { label: "GitHub" },
+            { label: "VS Code" },
+            { label: "Vercel" }
+          ]
+        }
+      ]
+    },
+    experience: {
+      tag: "Trajetória",
+      title: "Experiência",
+      subtitle: "Da liderança técnica em comunidades de RolePlay a projetos web sob demanda — uma trajetória construída entregando sistemas reais.",
+      items: [
+        {
+          role: "Tech Lead",
+          period: "Jun 2025 — Jan 2026",
+          company: "Aura Group / Aura RP",
+          companyVariant: "amber",
+          bullets: [
+            "Liderança técnica de uma equipe de desenvolvedores em projetos Lua para servidores FiveM/RedM.",
+            "Definição de arquitetura de sistemas, padronização de código e revisão de pull requests.",
+            "Mentoria de desenvolvedores juniores e organização do fluxo de desenvolvimento."
+          ],
+          tags: ["Lua", "FiveM", "RedM", "Liderança", "Git"]
+        },
+        {
+          role: "Desenvolvedor & Instrutor",
+          period: "2025 — Presente",
+          company: "JGC Consultoria",
+          companyVariant: "sky",
+          bullets: [
+            "Desenvolvimento de sistemas e sites web sob demanda para clientes da consultoria.",
+            "Atuação como instrutor, ensinando lógica de programação e desenvolvimento web para iniciantes."
+          ],
+          tags: ["JavaScript", "React", "Node.js", "Didática"]
+        },
+        {
+          role: "Desenvolvedor Lua",
+          period: "2023 — Presente",
+          company: "Impérium RP",
+          companyVariant: "amber",
+          bullets: [
+            "Criação e manutenção de scripts para servidores RedM utilizando o framework VORP Core.",
+            "Desenvolvimento de sistemas de economia, inventário e interfaces NUI para a comunidade."
+          ],
+          tags: ["Lua", "RedM", "VORP Core", "SQL"]
+        },
+        {
+          role: "Desenvolvedor Freelance",
+          period: "2025",
+          company: "Total Look",
+          companyVariant: "sky",
+          bullets: [
+            "Desenvolvimento de site institucional responsivo, do design à implantação."
+          ],
+          tags: ["React", "CSS3", "Vercel"]
+        },
+        {
+          role: "Desenvolvedor FiveM/RedM",
+          period: "2021 — Presente",
+          company: "Projetos Independentes",
+          companyVariant: "amber",
+          bullets: [
+            "Criação de bases completas para servidores FiveM (BaseAndromeda, BaseEchocity) com módulos próprios.",
+            "Desenvolvimento de bots para Discord, incluindo sistema de notificações de live (ArrowNotfys)."
+          ],
+          tags: ["Lua", "FiveM", "JavaScript", "Discord.js"]
+        }
+      ]
     },
     projects: {
+      tag: "Portfólio",
       title: "Projetos",
       subtitle: "Alguns dos meus trabalhos e projetos pessoais",
       baseAndromeda: {
@@ -81,30 +243,112 @@ export const strings = {
       },
       viewCode: "Ver Código",
       viewDemo: "Ver Demo",
+      featured: "Destaque",
       filterAll: "Todos",
       filterWeb: "Web",
       filterFiveM: "FiveM",
       filterBot: "Bot/Discord"
     },
     contact: {
-      title: "Contato",
-      subtitle: "Vamos conversar! Entre em contato através dos links abaixo",
+      tag: "Contato",
+      title: "Vamos trabalhar juntos",
+      subtitle: "Estou disponível para novos projetos, oportunidades de Tech Lead ou apenas para trocar uma ideia. Me chama!",
+      emailCta: "Enviar mensagem",
+      socialsLabel: "ou me encontre em:",
       linkedin: "LinkedIn",
-      github: "GitHub"
+      github: "GitHub",
+      instagram: "Instagram"
     },
     footer: {
       developed: "Desenvolvido por mim utilizando React e hospedado na Vercel.",
-      sourceCode: "Veja o código fonte"
+      sourceCode: "Veja o código fonte",
+      backToTop: "Voltar ao topo"
+    },
+    quiz: {
+      title: "Qual stack você precisa?",
+      subtitle: "Descubra qual área do meu conhecimento tem mais afinidade com as necessidades do seu projeto.",
+      btnStart: "Iniciar Teste de Afinidade",
+      questionLabel: "Pergunta {current} de {total}",
+      resultTitle: "Sua Afinidade Técnica",
+      resultSubtitle: "Com base nas suas respostas, aqui está a compatibilidade do seu projeto com as minhas especialidades:",
+      btnRestart: "Refazer Teste",
+      btnClose: "Fechar",
+      questions: [
+        {
+          q: "Qual é o principal objetivo do seu projeto atual?",
+          options: [
+            { text: "Criar uma aplicação web escalável, interativa e moderna.", score: { front: 3, back: 2 } },
+            { text: "Desenvolver sistemas robustos de lógica de jogo ou scripts para servidores multiplayer.", score: { game: 4 } },
+            { text: "Integrar APIs, gerenciar banco de dados e garantir fluxos de dados rápidos.", score: { back: 4 } },
+            { text: "Organizar equipes de desenvolvimento, estruturar código limpo e acelerar entregas.", score: { lead: 4 } }
+          ]
+        },
+        {
+          q: "Como você prefere gerenciar e armazenar informações?",
+          options: [
+            { text: "Com estruturas SQL eficientes, consultas performáticas e relacionamentos.", score: { back: 3, game: 1 } },
+            { text: "Principalmente local, manipulando estados dinâmicos na interface em tempo real.", score: { front: 4 } },
+            { text: "Através de automações otimizadas rodando no servidor com baixa latência.", score: { game: 3, back: 2 } },
+            { text: "Utilizando padronização de arquitetura e documentação sólida.", score: { lead: 3 } }
+          ]
+        },
+        {
+          q: "O que é mais crítico para o sucesso do seu produto hoje?",
+          options: [
+            { text: "Uma experiência de usuário (UI/UX) impressionante e animações fluidas.", score: { front: 4 } },
+            { text: "Uma lógica complexa extremamente rápida para suportar alta concorrência.", score: { game: 3, back: 2 } },
+            { text: "Segurança de dados, autenticação e comunicação entre microsserviços.", score: { back: 4 } },
+            { text: "Liderança de time, code review de qualidade e alinhamento de metas técnicas.", score: { lead: 4 } }
+          ]
+        }
+      ],
+      profiles: {
+        game: "Game Developer (Lua/FiveM/RedM)",
+        front: "Frontend Engineer (React/TypeScript)",
+        back: "Backend Developer (Node.js/SQL)",
+        lead: "Tech Lead & Liderança Técnica"
+      }
+    },
+    jornada: {
+      title: "Sua Jornada no Portfólio",
+      subtitle: "Interaja com a página para atingir 100% de progresso e desbloquear uma recompensa exclusiva!",
+      unlockedTitle: "🎉 Jornada Concluída! 100%",
+      unlockedDesc: "Parabéns! Você explorou todas as áreas importantes. Baixe agora meu Currículo Premium em formato PDF.",
+      btnDownload: "Baixar Currículo Premium (PDF)",
+      tasks: {
+        about: "Conhecer a história do Luis (Scroll até Sobre)",
+        skills: "Interagir com as tags de Habilidades",
+        quiz: "Completar o Teste de Afinidade Técnica",
+        projects: "Explorar os filtros de Projetos"
+      }
     }
   },
   en: {
+    nav: {
+      about: "About",
+      skills: "Skills",
+      experience: "Experience",
+      projects: "Projects",
+      contact: "Contact"
+    },
     hero: {
-      greeting: "Hi, I'm",
+      eyebrow: "Available for new projects",
+      greetingMorning: "Good morning! I'm",
+      greetingAfternoon: "Good afternoon! I'm",
+      greetingEvening: "Good evening! I'm",
       name: "Luis Roberto",
-      title: "Full Stack Developer",
-      subtitle: "Specialist in complex logic, transitioning from Game Dev (Lua/C) to Web & Mobile. Development Leader at ArrowLab.",
+      title: "Full Stack Developer & Tech Lead",
+      titleHighlight: "Full Stack",
+      desc: "Specialist in complex logic, transitioning from Game Development (Lua/C, FiveM/RedM) to Web & Mobile. Today I work as a Tech Lead, leading teams and building products from scratch — from backend to interface.",
       btnProjects: "View Projects",
-      btnLinkedIn: "LinkedIn"
+      btnContact: "Get in touch",
+      btnLinkedIn: "LinkedIn",
+      stats: [
+        { value: "4+", label: "years with Lua / FiveM" },
+        { value: "8", label: "portfolio projects" },
+        { value: "5+", label: "systems delivered" },
+        { value: "20", label: "years old" }
+      ]
     },
     services: {
       title: "What I Do",
@@ -127,14 +371,158 @@ export const strings = {
       }
     },
     about: {
-      title: "About Me",
-      text: "Full Stack Developer with solid experience in complex logic and solving challenging problems. My journey started in game development using Lua and C, where I developed deep skills in algorithms and performance optimization. Currently, I'm transitioning to the Web & Mobile ecosystem, applying my software development experience to create modern and scalable solutions. I'm one of the development leaders at ArrowLab, a startup focused on technological innovation. I'm an expert in transforming complex technical challenges into clean and efficient code, always focusing on quality and performance."
+      tag: "About me",
+      title: "Who is Luis Roberto",
+      paragraphs: [
+        "I'm a full stack developer from Manaus, Brazil, with a journey that started in <strong>Game Development</strong> — writing Lua and C systems for FiveM and RedM servers, where I learned to solve complex logic problems under real performance constraints.",
+        "Today I apply that foundation to the <strong>Web & Mobile</strong> ecosystem, building applications with React, Node.js and TypeScript. I work as a <strong>Tech Lead</strong>, leading teams, defining architecture and reviewing code on projects that go from MVP to production.",
+        "I'm currently studying Systems Analysis and Development, and I'm focused on turning ideas into real products — always aiming for clean code, solid architecture decisions and a visual result that matches the technical work."
+      ],
+      chips: [
+        "📍 Manaus, Brazil",
+        "🎓 CS Degree — FAMETRO",
+        "🇧🇷 Native PT",
+        "🇺🇸 Advanced EN",
+        "🚀 Available"
+      ]
     },
     skills: {
-      title: "Skills",
-      subtitle: "Technologies and tools I master"
+      tag: "Skills",
+      title: "Technologies & tools",
+      subtitle: "From game logic in Lua to modern web development — a toolkit built in practice, project after project.",
+      categories: [
+        {
+          icon: "🎨",
+          variant: "sky",
+          title: "Frontend",
+          tags: [
+            { label: "React", variant: "highlight" },
+            { label: "JavaScript", variant: "highlight" },
+            { label: "TypeScript" },
+            { label: "HTML5" },
+            { label: "CSS3" }
+          ]
+        },
+        {
+          icon: "⚙️",
+          variant: "sky",
+          title: "Backend & Data",
+          tags: [
+            { label: "Node.js", variant: "highlight" },
+            { label: "SQL" },
+            { label: "REST APIs" },
+            { label: "MySQL" }
+          ]
+        },
+        {
+          icon: "🎮",
+          variant: "amber",
+          title: "Game Development",
+          tags: [
+            { label: "Lua", variant: "warm" },
+            { label: "C" },
+            { label: "FiveM" },
+            { label: "RedM" },
+            { label: "VORP Core" }
+          ]
+        },
+        {
+          icon: "📱",
+          variant: "sky",
+          title: "Mobile",
+          tags: [
+            { label: "Android" },
+            { label: "Java" }
+          ]
+        },
+        {
+          icon: "👨‍💼",
+          variant: "amber",
+          title: "Leadership & Soft Skills",
+          tags: [
+            { label: "Tech Lead", variant: "warm" },
+            { label: "Mentoring" },
+            { label: "Code Review" },
+            { label: "Project Management" }
+          ]
+        },
+        {
+          icon: "🛠️",
+          variant: "sky",
+          title: "Tools & Workflow",
+          tags: [
+            { label: "Git" },
+            { label: "GitHub" },
+            { label: "VS Code" },
+            { label: "Vercel" }
+          ]
+        }
+      ]
+    },
+    experience: {
+      tag: "Journey",
+      title: "Experience",
+      subtitle: "From technical leadership in RolePlay communities to on-demand web projects — a journey built by shipping real systems.",
+      items: [
+        {
+          role: "Tech Lead",
+          period: "Jun 2025 — Jan 2026",
+          company: "Aura Group / Aura RP",
+          companyVariant: "amber",
+          bullets: [
+            "Technical leadership of a developer team on Lua projects for FiveM/RedM servers.",
+            "Defined system architecture, coding standards and pull request reviews.",
+            "Mentored junior developers and organized the development workflow."
+          ],
+          tags: ["Lua", "FiveM", "RedM", "Leadership", "Git"]
+        },
+        {
+          role: "Developer & Instructor",
+          period: "2025 — Present",
+          company: "JGC Consultoria",
+          companyVariant: "sky",
+          bullets: [
+            "Developed on-demand systems and websites for consulting clients.",
+            "Worked as an instructor, teaching programming logic and web development to beginners."
+          ],
+          tags: ["JavaScript", "React", "Node.js", "Teaching"]
+        },
+        {
+          role: "Lua Developer",
+          period: "2023 — Present",
+          company: "Impérium RP",
+          companyVariant: "amber",
+          bullets: [
+            "Created and maintained scripts for RedM servers using the VORP Core framework.",
+            "Built economy, inventory and NUI interface systems for the community."
+          ],
+          tags: ["Lua", "RedM", "VORP Core", "SQL"]
+        },
+        {
+          role: "Freelance Developer",
+          period: "2025",
+          company: "Total Look",
+          companyVariant: "sky",
+          bullets: [
+            "Built a responsive institutional website, from design to deployment."
+          ],
+          tags: ["React", "CSS3", "Vercel"]
+        },
+        {
+          role: "FiveM/RedM Developer",
+          period: "2021 — Present",
+          company: "Independent Projects",
+          companyVariant: "amber",
+          bullets: [
+            "Built complete FiveM server bases (BaseAndromeda, BaseEchocity) with custom modules.",
+            "Developed Discord bots, including a live-stream notification system (ArrowNotfys)."
+          ],
+          tags: ["Lua", "FiveM", "JavaScript", "Discord.js"]
+        }
+      ]
     },
     projects: {
+      tag: "Portfolio",
       title: "Projects",
       subtitle: "Some of my works and personal projects",
       baseAndromeda: {
@@ -179,20 +567,84 @@ export const strings = {
       },
       viewCode: "View Code",
       viewDemo: "View Demo",
+      featured: "Featured",
       filterAll: "All",
       filterWeb: "Web",
       filterFiveM: "FiveM",
       filterBot: "Bot/Discord"
     },
     contact: {
-      title: "Contact",
-      subtitle: "Let's talk! Get in touch through the links below",
+      tag: "Contact",
+      title: "Let's work together",
+      subtitle: "I'm available for new projects, Tech Lead opportunities, or just to chat. Reach out!",
+      emailCta: "Send message",
+      socialsLabel: "or find me on:",
       linkedin: "LinkedIn",
-      github: "GitHub"
+      github: "GitHub",
+      instagram: "Instagram"
     },
     footer: {
       developed: "Developed by me using React and hosted on Vercel.",
-      sourceCode: "View source code"
+      sourceCode: "View source code",
+      backToTop: "Back to top"
+    },
+    quiz: {
+      title: "Which stack do you need?",
+      subtitle: "Discover which area of my knowledge aligns best with your project's needs.",
+      btnStart: "Start Affinity Test",
+      questionLabel: "Question {current} of {total}",
+      resultTitle: "Your Technical Affinity",
+      resultSubtitle: "Based on your answers, here is the compatibility of your project with my specialties:",
+      btnRestart: "Retake Test",
+      btnClose: "Close",
+      questions: [
+        {
+          q: "What is the main goal of your current project?",
+          options: [
+            { text: "Build a scalable, interactive, and modern web application.", score: { front: 3, back: 2 } },
+            { text: "Develop robust game logic systems or scripts for multiplayer servers.", score: { game: 4 } },
+            { text: "Integrate APIs, manage databases, and ensure fast data flows.", score: { back: 4 } },
+            { text: "Organize dev teams, structure clean code, and accelerate deliveries.", score: { lead: 4 } }
+          ]
+        },
+        {
+          q: "How do you prefer to manage and store information?",
+          options: [
+            { text: "With efficient SQL structures, high-performance queries, and relationships.", score: { back: 3, game: 1 } },
+            { text: "Mainly locally, handling dynamic states in the UI in real-time.", score: { front: 4 } },
+            { text: "Through optimized automations running on the server with low latency.", score: { game: 3, back: 2 } },
+            { text: "Using architectural standards and solid documentation.", score: { lead: 3 } }
+          ]
+        },
+        {
+          q: "What is most critical for your product's success today?",
+          options: [
+            { text: "An impressive user experience (UI/UX) and fluid animations.", score: { front: 4 } },
+            { text: "A complex logic that runs extremely fast to handle high concurrency.", score: { game: 3, back: 2 } },
+            { text: "Data security, authentication, and communication between microservices.", score: { back: 4 } },
+            { text: "Team leadership, quality code reviews, and technical goal alignment.", score: { lead: 4 } }
+          ]
+        }
+      ],
+      profiles: {
+        game: "Game Developer (Lua/FiveM/RedM)",
+        front: "Frontend Engineer (React/TypeScript)",
+        back: "Backend Developer (Node.js/SQL)",
+        lead: "Tech Lead & Technical Leadership"
+      }
+    },
+    jornada: {
+      title: "Your Portfolio Journey",
+      subtitle: "Interact with the page to reach 100% progress and unlock an exclusive reward!",
+      unlockedTitle: "🎉 Journey Completed! 100%",
+      unlockedDesc: "Congratulations! You explored all important areas. Download my Premium Resume in PDF format now.",
+      btnDownload: "Download Premium Resume (PDF)",
+      tasks: {
+        about: "Read Luis' story (Scroll to About)",
+        skills: "Interact with the Skill tags",
+        quiz: "Complete the Technical Affinity Test",
+        projects: "Explore the Project filters"
+      }
     }
   }
 }

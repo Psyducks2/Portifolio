@@ -1,52 +1,133 @@
+.contact {
+  position: relative;
+}
+
 .contact-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-lg);
-  max-width: 900px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
+/* ── Card ── */
 .contact-link {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl);
+  padding: 36px 20px;
   text-align: center;
   min-height: 180px;
   cursor: pointer;
+  text-decoration: none;
+  gap: 10px;
+  transition: all var(--transition);
 }
 
 .contact-link:hover {
-  background-color: var(--color-bg-card-hover);
-  border-color: var(--color-border-hover);
+  transform: translateY(-5px);
 }
 
+/* Icon wrapper */
 .contact-icon {
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-md);
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform var(--transition-base);
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  color: var(--sky);
+  margin-bottom: 4px;
+  transition: all var(--transition);
 }
 
 .contact-link:hover .contact-icon {
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.contact-icon--email {
+  background: rgba(14, 165, 233, 0.08);
+  border-color: rgba(14, 165, 233, 0.2);
+  color: var(--sky);
+}
+
+.contact-link:nth-child(1):hover .contact-icon {
+  box-shadow: 0 0 28px rgba(14, 165, 233, 0.4);
+}
+
+.contact-icon--phone {
+  background: rgba(34, 197, 94, 0.08);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: #22C55E;
+}
+
+.contact-link:nth-child(2):hover .contact-icon {
+  box-shadow: 0 0 28px rgba(34, 197, 94, 0.3);
+}
+
+.contact-icon--linkedin {
+  background: rgba(10, 102, 194, 0.1);
+  border-color: rgba(10, 102, 194, 0.25);
+  color: #4A9EDB;
+}
+
+.contact-link:nth-child(3):hover .contact-icon {
+  box-shadow: 0 0 28px rgba(10, 102, 194, 0.4);
+}
+
+.contact-icon--github {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.contact-link:nth-child(4):hover .contact-icon {
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.15);
+}
+
+/* Text */
+.contact-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 .contact-text {
-  font-size: var(--font-size-lg);
+  font-family: var(--sans);
+  font-size: 13.5px;
   font-weight: 600;
-  color: var(--color-text-primary);
+  color: var(--text);
+  letter-spacing: -0.02em;
 }
 
-@media (max-width: 768px) {
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .contact-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
   .contact-links {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-link {
-    min-height: 150px;
+    min-height: 130px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 24px;
+    gap: 20px;
+    text-align: left;
+  }
+
+  .contact-icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
   }
 }

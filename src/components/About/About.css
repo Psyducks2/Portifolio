@@ -1,37 +1,179 @@
 .about {
-  background-color: rgba(17, 24, 39, 0.3);
   position: relative;
 }
 
-.about::before {
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+/* ── Visual column ── */
+.about-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Rotating gradient ring */
+.about-avatar-ring {
+  position: absolute;
+  width: calc(100% + 12px);
+  max-width: 332px;
+  aspect-ratio: 1;
+  border-radius: calc(var(--radius-lg) + 6px);
+  background: conic-gradient(
+    from 180deg,
+    var(--sky) 0deg,
+    var(--amber) 120deg,
+    transparent 200deg,
+    transparent 360deg
+  );
+  z-index: 0;
+  opacity: 0.6;
+  filter: blur(1px);
+  animation: rotateRing 8s linear infinite;
+}
+
+@keyframes rotateRing {
+  to { transform: rotate(360deg); }
+}
+
+.about-avatar {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, var(--card) 0%, var(--surface) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sans);
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  background-clip: padding-box;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Gradient text on initials */
+.about-avatar::before {
+  content: 'LR';
+  position: absolute;
+  font-family: var(--sans);
+  font-size: 76px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  background: linear-gradient(135deg, var(--sky) 0%, var(--sky-light) 40%, var(--amber) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Inner glow overlay */
+.about-avatar::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  inset: 0;
+  background:
+    radial-gradient(circle at 25% 20%, rgba(14, 165, 233, 0.15), transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.1), transparent 55%);
 }
 
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
+/* Floating badges */
+.about-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(13, 21, 38, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-mid);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  white-space: nowrap;
 }
 
-.about-text-wrapper {
-  margin-bottom: var(--spacing-xl);
+.about-badge--1 {
+  bottom: 20px;
+  right: -20px;
 }
 
-.about-text {
-  font-size: var(--font-size-lg);
-  line-height: 1.8;
-  color: var(--color-text-secondary);
-  text-align: justify;
+.about-badge--2 {
+  top: 20px;
+  left: -20px;
+}
+
+.ab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 6px #22C55E;
+  animation: pulse 2s ease infinite;
+}
+
+.ab-icon {
+  font-size: 14px;
+}
+
+.ab-text {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ── Text column ── */
+.about-text p {
+  font-size: 16.5px;
+  line-height: 1.9;
+  color: var(--text-mid);
+  margin-bottom: 22px;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 36px;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .about-visual {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .about-badge--1 { right: -10px; }
+  .about-badge--2 { left: -10px; }
 }
 
 @media (max-width: 768px) {
-  .about-text {
+  .about-text p {
     font-size: var(--font-size-base);
-    text-align: left;
   }
 }

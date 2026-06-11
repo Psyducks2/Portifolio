@@ -1,12 +1,20 @@
+import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { initSpotlight } from '../../utils/spotlight'
 import './GitHubStats.css'
 
 const GitHubStats = () => {
   const { language } = useLanguage()
 
+  useEffect(() => {
+    const cleanup = initSpotlight()
+    return () => cleanup()
+  }, [])
+
   return (
     <section id="github-stats" className="github-stats section">
+      <div className="section-bg-num">06</div>
       <div className="container">
         <h2 className="section-title">GitHub Contributions</h2>
         <p className="section-subtitle">Minha atividade e contribuições no GitHub</p>
@@ -19,25 +27,25 @@ const GitHubStats = () => {
             className="github-profile-link"
           >
             <div className="github-stats-grid">
-              <div className="github-stat-card card">
+              <div className="github-stat-card card spotlight-card">
                 <div className="github-stat-icon">📁</div>
                 <div className="github-stat-value">7+</div>
                 <div className="github-stat-label">Repositórios</div>
               </div>
               
-              <div className="github-stat-card card">
+              <div className="github-stat-card card spotlight-card">
                 <div className="github-stat-icon">⭐</div>
                 <div className="github-stat-value">2+</div>
                 <div className="github-stat-label">Stars</div>
               </div>
               
-              <div className="github-stat-card card">
+              <div className="github-stat-card card spotlight-card">
                 <div className="github-stat-icon">🔷</div>
                 <div className="github-stat-value">5+</div>
                 <div className="github-stat-label">Linguagens</div>
               </div>
               
-              <div className="github-stat-card card">
+              <div className="github-stat-card card spotlight-card">
                 <div className="github-stat-icon">💻</div>
                 <div className="github-stat-value">Ativo</div>
                 <div className="github-stat-label">Desenvolvendo</div>

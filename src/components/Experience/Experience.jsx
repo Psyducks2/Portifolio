@@ -1,45 +1,59 @@
+import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { initSpotlight } from '../../utils/spotlight'
 import './Experience.css'
 
 const Experience = () => {
   const { language } = useLanguage()
   const t = strings[language]
 
-  const experiences = [
-    {
-      title: t.experience.arrowlab.title,
-      company: t.experience.arrowlab.company,
-      period: t.experience.arrowlab.period,
-      description: t.experience.arrowlab.description
-    },
-    {
-      title: t.experience.freelancer.title,
-      company: t.experience.freelancer.company,
-      period: t.experience.freelancer.period,
-      description: t.experience.freelancer.description
-    }
-  ]
+  useEffect(() => {
+    const cleanup = initSpotlight()
+    return () => cleanup()
+  }, [])
 
   return (
     <section id="experience" className="experience section">
+      <div className="section-bg-num">04</div>
       <div className="container">
+        <span className="section-tag">{t.experience.tag}</span>
         <h2 className="section-title">{t.experience.title}</h2>
-        <p className="section-subtitle">{t.experience.subtitle}</p>
-        <div className="experience-timeline">
-          {experiences.map((exp, index) => (
-            <div key={index} className="experience-item" data-aos="fade-up" data-aos-delay={index * 150}>
-              <div className="experience-dot"></div>
-              <div className="experience-content card">
-                <div className="experience-header">
-                  <h3 className="experience-title">{exp.title}</h3>
-                  <span className="experience-period">{exp.period}</span>
+        <p className="section-sub">{t.experience.subtitle}</p>
+
+        <div className="exp-timeline">
+          {t.experience.items.map((exp, index) => {
+            const amber = exp.companyVariant === 'amber'
+            return (
+              <div
+                className="exp-item"
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className={`exp-dot${amber ? ' amber' : ''}`}>
+                  <div className="exp-dot-inner" />
                 </div>
-                <div className="experience-company">{exp.company}</div>
-                <p className="experience-description">{exp.description}</p>
+                <div className="exp-card card spotlight-card">
+                  <div className="exp-header">
+                    <h3 className="exp-role">{exp.role}</h3>
+                    <span className="exp-period">{exp.period}</span>
+                  </div>
+                  <div className={`exp-company${amber ? ' amber' : ''}`}>{exp.company}</div>
+                  <ul className="exp-bullets">
+                    {exp.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex}>{bullet}</li>
+                    ))}
+                  </ul>
+                  <div className="exp-tags">
+                    {exp.tags.map((tag, tagIndex) => (
+                      <span className="skill-tag" key={tagIndex}>{tag}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

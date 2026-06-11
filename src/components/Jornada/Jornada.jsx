@@ -3,7 +3,7 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import './Jornada.css'
 
-const Jornada = ({ onOpenQuiz }) => {
+const Jornada = () => {
   const { language } = useLanguage()
   const t = strings[language]
 
@@ -11,7 +11,6 @@ const Jornada = ({ onOpenQuiz }) => {
   const [tasks, setTasks] = useState({
     about: false,
     skills: false,
-    quiz: false,
     projects: false
   })
   const [percentage, setPercentage] = useState(0)
@@ -22,21 +21,19 @@ const Jornada = ({ onOpenQuiz }) => {
   const updateTasksStatus = () => {
     const aboutVal = localStorage.getItem('portfolio_task_about') === 'true'
     const skillsVal = localStorage.getItem('portfolio_task_skills') === 'true'
-    const quizVal = localStorage.getItem('portfolio_task_quiz') === 'true'
     const projectsVal = localStorage.getItem('portfolio_task_projects') === 'true'
 
     const updated = {
       about: aboutVal,
       skills: skillsVal,
-      quiz: quizVal,
       projects: projectsVal
     }
 
     setTasks(updated)
 
-    // Calcula a porcentagem
+    // Calcula a porcentagem com base em 3 tarefas
     const completedCount = Object.values(updated).filter(Boolean).length
-    const pct = Math.round((completedCount / 4) * 100)
+    const pct = Math.round((completedCount / 3) * 100)
     setPercentage(pct)
 
     // Verifica se completou 100% para soltar confetes
@@ -87,6 +84,8 @@ const Jornada = ({ onOpenQuiz }) => {
     )
   }
 
+  const unlockedTitle = language === 'pt' ? 'Jornada Concluída! 100%' : 'Journey Completed! 100%'
+
   return (
     <>
       {renderConfetti()}
@@ -117,7 +116,7 @@ const Jornada = ({ onOpenQuiz }) => {
         {/* Checklist Panel */}
         {isOpen && (
           <div className="jornada-panel card">
-            <h3 className="panel-title">{percentage === 100 ? t.jornada.unlockedTitle : t.jornada.title}</h3>
+            <h3 className="panel-title">{percentage === 100 ? unlockedTitle : t.jornada.title}</h3>
             <p className="panel-subtitle">
               {percentage === 100 ? t.jornada.unlockedDesc : t.jornada.subtitle}
             </p>
@@ -131,23 +130,6 @@ const Jornada = ({ onOpenQuiz }) => {
                 <span className="checklist-status" />
                 <span className="checklist-text">{t.jornada.tasks.skills}</span>
               </li>
-              <li className={`checklist-item ${tasks.quiz ? 'checklist-item--checked' : ''}`}>
-                <span className="checklist-status" />
-                <span className="checklist-text">
-                  {t.jornada.tasks.quiz}{' '}
-                  {!tasks.quiz && (
-                    <button 
-                      className="inline-quiz-btn"
-                      onClick={() => {
-                        setIsOpen(false)
-                        onOpenQuiz()
-                      }}
-                    >
-                      (Fazer agora)
-                    </button>
-                  )}
-                </span>
-              </li>
               <li className={`checklist-item ${tasks.projects ? 'checklist-item--checked' : ''}`}>
                 <span className="checklist-status" />
                 <span className="checklist-text">{t.jornada.tasks.projects}</span>
@@ -160,7 +142,6 @@ const Jornada = ({ onOpenQuiz }) => {
                 download="Luis_Roberto_Curriculo.pdf"
                 className="btn btn-primary download-cv-btn"
                 onClick={() => {
-                  // Solta confetes novamente ao clicar no download como comemoração extra!
                   setShowConfetti(true)
                   setTimeout(() => setShowConfetti(false), 5000)
                 }}

@@ -45,7 +45,7 @@ const Hero = () => {
           <div className="hf-line hf-indent">
             <span className="hf-key">role</span>
             <span className="hf-op">:</span>{' '}
-            <span className="hf-str">"Tech Lead"</span><span className="hf-punct">,</span>
+            <span className="hf-str">"Dev Full Stack"</span><span className="hf-punct">,</span>
           </div>
           <div className="hf-line hf-indent">
             <span className="hf-key">stack</span>
@@ -55,7 +55,25 @@ const Hero = () => {
             <span className="hf-punct">, </span>
             <span className="hf-str">"Node"</span>
             <span className="hf-punct">, </span>
+            <span className="hf-str">"TS"</span>
+            <span className="hf-brace">]</span><span className="hf-punct">,</span>
+          </div>
+          <div className="hf-line hf-indent">
+            <span className="hf-key">gamedev</span>
+            <span className="hf-op">:</span>{' '}
+            <span className="hf-brace">[</span>
             <span className="hf-str">"Lua"</span>
+            <span className="hf-punct">, </span>
+            <span className="hf-str">"FiveM"</span>
+            <span className="hf-brace">]</span><span className="hf-punct">,</span>
+          </div>
+          <div className="hf-line hf-indent">
+            <span className="hf-key">tools</span>
+            <span className="hf-op">:</span>{' '}
+            <span className="hf-brace">[</span>
+            <span className="hf-str">"Git"</span>
+            <span className="hf-punct">, </span>
+            <span className="hf-str">"Vercel"</span>
             <span className="hf-brace">]</span><span className="hf-punct">,</span>
           </div>
           <div className="hf-line hf-indent">

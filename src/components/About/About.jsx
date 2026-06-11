@@ -40,7 +40,11 @@ const About = () => {
               <span className="ab-text">Disponível</span>
             </div>
             <div className="about-badge about-badge--2">
-              <span className="ab-icon">🎓</span>
+              <span className="ab-icon">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </span>
               <span className="ab-text">ADS</span>
             </div>
           </div>
@@ -54,14 +58,7 @@ const About = () => {
                 <span className="chip" key={index}>{chip}</span>
               ))}
             </div>
-            <div className="about-action" style={{ marginTop: '28px' }}>
-              <button 
-                className="btn btn-primary" 
-                onClick={() => window.dispatchEvent(new Event('open-affinity-quiz'))}
-              >
-                <span>🧠 {t.quiz.btnStart}</span>
-              </button>
-            </div>
+
           </div>
         </div>
       </div>

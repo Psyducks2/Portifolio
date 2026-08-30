@@ -15,7 +15,7 @@ const Experience = () => {
 
   return (
     <section id="experience" className="experience section">
-      <div className="section-bg-num">04</div>
+      <div className="section-bg-num">03</div>
       <div className="container">
         <span className="section-tag">{t.experience.tag}</span>
         <h2 className="section-title">{t.experience.title}</h2>
@@ -23,31 +23,38 @@ const Experience = () => {
 
         <div className="exp-timeline">
           {t.experience.items.map((exp, index) => {
-            const amber = exp.companyVariant === 'amber'
+            const isAmber = exp.companyVariant === 'amber'
             return (
               <div
                 className="exp-item"
                 key={index}
                 data-aos="fade-up"
-                data-aos-delay={index * 100}
+                data-aos-delay={index * 80}
               >
-                <div className={`exp-dot${amber ? ' amber' : ''}`}>
+                <div className={`exp-dot${isAmber ? ' exp-dot--amber' : ''}`}>
                   <div className="exp-dot-inner" />
                 </div>
+
                 <div className="exp-card card spotlight-card">
                   <div className="exp-header">
-                    <h3 className="exp-role">{exp.role}</h3>
+                    <div>
+                      <h3 className="exp-role">{exp.role}</h3>
+                      <div className={`exp-company${isAmber ? ' exp-company--amber' : ''}`}>
+                        {exp.company}
+                      </div>
+                    </div>
                     <span className="exp-period">{exp.period}</span>
                   </div>
-                  <div className={`exp-company${amber ? ' amber' : ''}`}>{exp.company}</div>
+
                   <ul className="exp-bullets">
-                    {exp.bullets.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex}>{bullet}</li>
+                    {exp.bullets.map((bullet, bIdx) => (
+                      <li key={bIdx}>{bullet}</li>
                     ))}
                   </ul>
+
                   <div className="exp-tags">
-                    {exp.tags.map((tag, tagIndex) => (
-                      <span className="skill-tag" key={tagIndex}>{tag}</span>
+                    {exp.tags.map((tag, tIdx) => (
+                      <span className="skill-tag" key={tIdx}>{tag}</span>
                     ))}
                   </div>
                 </div>

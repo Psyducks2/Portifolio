@@ -1,38 +1,91 @@
 .footer {
-  background-color: rgba(10, 14, 26, 0.8);
-  border-top: 1px solid var(--color-border);
-  padding: var(--spacing-xl) 0;
-  margin-top: var(--spacing-3xl);
-  position: relative;
+  background: var(--surface, #0d1526);
+  border-top: 1px solid var(--border, #1e3048);
+  padding: 3.5rem 0 2rem;
 }
 
-.footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+[data-theme="light"] .footer {
+  background: #f1f5f9;
+  border-top-color: rgba(148, 163, 184, 0.2);
 }
 
-.footer-content {
-  text-align: center;
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.footer-text {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: 1.6;
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.footer-link {
-  color: var(--color-accent);
-  font-weight: 500;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 400px;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-mid, #94a3b8);
+  line-height: 1.5;
+}
+
+.footer-quote-box {
+  max-width: 450px;
+}
+
+.footer-quote {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--text-mid, #94a3b8);
+  border-left: 2px solid var(--sky, #0ea5e9);
+  padding-left: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--text-dim, #4b6180);
+}
+
+.footer-source-link {
+  color: var(--sky-light, #38bdf8);
   text-decoration: underline;
-  text-underline-offset: 3px;
+  transition: color 0.2s ease;
 }
 
-.footer-link:hover {
-  color: var(--color-accent-hover);
+.footer-source-link:hover {
+  color: var(--sky, #0ea5e9);
+}
+
+.footer-back-top {
+  background: none;
+  border: none;
+  color: var(--sky-light, #38bdf8);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.footer-back-top:hover {
+  background: rgba(14, 165, 233, 0.1);
+  transform: translateY(-2px);
 }

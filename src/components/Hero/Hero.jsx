@@ -2,14 +2,9 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import './Hero.css'
 
-const Hero = () => {
+const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
   const { language } = useLanguage()
   const t = strings[language]
-
-  const scrollToProjects = (e) => {
-    e.preventDefault()
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
-  }
 
   const getGreeting = () => {
     const hours = new Date().getHours()
@@ -20,108 +15,135 @@ const Hero = () => {
 
   const [firstName, ...rest] = t.hero.name.split(' ')
   const lastName = rest.join(' ')
-  const [titleBefore, titleAfter] = t.hero.title.split(t.hero.titleHighlight)
+  const [roleBefore, roleAfter] = t.hero.role.split(t.hero.roleHighlight)
 
   return (
     <section id="hero" className="hero section">
-      <div className="hero-grid" aria-hidden="true"></div>
-      <div className="hero-glow" aria-hidden="true"></div>
-      <div className="hero-glow-amber" aria-hidden="true"></div>
+      <div className="hero-grid-bg" aria-hidden="true"></div>
+      <div className="hero-glow hero-glow--blue" aria-hidden="true"></div>
+      <div className="hero-glow hero-glow--amber" aria-hidden="true"></div>
 
-      <div className="hero-float" aria-hidden="true">
-        <div className="hero-float-bar">
-          <span className="hf-dot hf-dot--red" />
-          <span className="hf-dot hf-dot--yellow" />
-          <span className="hf-dot hf-dot--green" />
-          <span className="hf-filename">developer.ts</span>
-        </div>
-        <div className="hero-float-body">
-          <div className="hf-line">
-            <span className="hf-kw">const</span>{' '}
-            <span className="hf-var">luis</span>{' '}
-            <span className="hf-op">=</span>{' '}
-            <span className="hf-brace">{'{'}</span>
+      <div className="container hero-container">
+        {/* Left Column: Text & CTAs */}
+        <div className="hero-left" data-aos="fade-right">
+          <div className="hero-eyebrow-badge">
+            <span className="live-dot"></span>
+            <span>{t.hero.eyebrow}</span>
           </div>
-          <div className="hf-line hf-indent">
-            <span className="hf-key">role</span>
-            <span className="hf-op">:</span>{' '}
-            <span className="hf-str">"Dev Full Stack"</span><span className="hf-punct">,</span>
-          </div>
-          <div className="hf-line hf-indent">
-            <span className="hf-key">stack</span>
-            <span className="hf-op">:</span>{' '}
-            <span className="hf-brace">[</span>
-            <span className="hf-str">"React"</span>
-            <span className="hf-punct">, </span>
-            <span className="hf-str">"Node"</span>
-            <span className="hf-punct">, </span>
-            <span className="hf-str">"TS"</span>
-            <span className="hf-brace">]</span><span className="hf-punct">,</span>
-          </div>
-          <div className="hf-line hf-indent">
-            <span className="hf-key">gamedev</span>
-            <span className="hf-op">:</span>{' '}
-            <span className="hf-brace">[</span>
-            <span className="hf-str">"Lua"</span>
-            <span className="hf-punct">, </span>
-            <span className="hf-str">"FiveM"</span>
-            <span className="hf-brace">]</span><span className="hf-punct">,</span>
-          </div>
-          <div className="hf-line hf-indent">
-            <span className="hf-key">tools</span>
-            <span className="hf-op">:</span>{' '}
-            <span className="hf-brace">[</span>
-            <span className="hf-str">"Git"</span>
-            <span className="hf-punct">, </span>
-            <span className="hf-str">"Vercel"</span>
-            <span className="hf-brace">]</span><span className="hf-punct">,</span>
-          </div>
-          <div className="hf-line hf-indent">
-            <span className="hf-key">available</span>
-            <span className="hf-op">:</span>{' '}
-            <span className="hf-bool">true</span>
-          </div>
-          <div className="hf-line">
-            <span className="hf-brace">{'}'}</span>
-          </div>
-        </div>
-      </div>
 
-      <div className="container hero-content">
-        <span className="eyebrow">{t.hero.eyebrow}</span>
+          <p className="hero-greeting">{getGreeting()}</p>
+          
+          <h1 className="hero-name">
+            <span className="hero-name-first">{firstName}</span>{' '}
+            <span className="hero-name-last text-gradient">{lastName}</span>
+          </h1>
 
-        <p className="hero-greeting">{getGreeting()}</p>
-        <h1 className="hero-name">
-          <span className="hero-name-first">{firstName}</span>
-          <br />
-          <span className="hero-name-last">{lastName}</span>
-        </h1>
+          <h2 className="hero-role">
+            {roleBefore}
+            <span className="text-highlight">{t.hero.roleHighlight}</span>
+            {roleAfter}
+          </h2>
 
-        <h2 className="hero-title">
-          {titleBefore}<strong>{t.hero.titleHighlight}</strong>{titleAfter}
-        </h2>
+          <p className="hero-desc">{t.hero.desc}</p>
 
-        <p className="hero-desc">{t.hero.desc}</p>
+          <div className="hero-actions">
+            <a href="#projects" className="btn btn-primary">
+              <span>{t.hero.btnProjects}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            
+            <a href="#contact" className="btn btn-secondary">
+              {t.hero.btnContact}
+            </a>
 
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary" onClick={scrollToProjects}>
-            <span>{t.hero.btnProjects}</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a href="#contact" className="btn btn-secondary">
-            {t.hero.btnContact}
-          </a>
+            {/* Quick interactive buttons */}
+            <button
+              onClick={onOpenTerminal}
+              className="btn btn-icon-ghost"
+              title="Abrir Terminal CLI"
+              aria-label="Abrir Terminal CLI"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />
+              </svg>
+              <span>CLI</span>
+            </button>
+
+            <button
+              onClick={onOpenQuiz}
+              className="btn btn-icon-ghost"
+              title="Teste de Afinidade de Stack"
+              aria-label="Teste de Afinidade de Stack"
+            >
+              <span>🧠 Quiz</span>
+            </button>
+          </div>
+
+          <div className="hero-stats-row">
+            {t.hero.stats.map((stat, idx) => (
+              <div className="hero-stat-card" key={idx}>
+                <span className="h-stat-num">{stat.value}</span>
+                <span className="h-stat-label">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="hero-stats">
-          {t.hero.stats.map((stat, index) => (
-            <div className="stat-item" key={index}>
-              <span className="stat-num">{stat.value}</span>
-              <span className="stat-label">{stat.label}</span>
+        {/* Right Column: Interactive Code Bento / Window */}
+        <div className="hero-right" data-aos="fade-left">
+          <div className="code-window card spotlight-card">
+            <div className="code-window-bar">
+              <div className="window-dots">
+                <span className="w-dot w-dot--red" />
+                <span className="w-dot w-dot--yellow" />
+                <span className="w-dot w-dot--green" />
+              </div>
+              <div className="window-filename">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                </svg>
+                <span>luis_architect.ts</span>
+              </div>
+              <div className="window-action">
+                <span className="window-lang">TypeScript</span>
+              </div>
             </div>
-          ))}
+
+            <div className="code-window-body">
+              <pre>
+                <code>
+                  <span className="c-kw">interface</span> <span className="c-type">EngineerProfile</span> <span className="c-brace">{'{'}</span>{'\n'}
+                  {'  '}name: <span className="c-str">'Luis Roberto'</span>;{'\n'}
+                  {'  '}location: <span className="c-str">'Manaus, AM - Brasil 📍'</span>;{'\n'}
+                  {'  '}education: <span className="c-str">'ADS @ FAMETRO 🎓'</span>;{'\n'}
+                  {'  '}primaryStacks: <span className="c-type">string</span>[];{'\n'}
+                  {'  '}hardware_IoT: <span className="c-type">string</span>[];{'\n'}
+                  {'  '}highConcurrency: <span className="c-type">string</span>[];{'\n'}
+                  {'  '}openToWork: <span className="c-bool">boolean</span>;{'\n'}
+                  <span className="c-brace">{'}'}</span>{'\n\n'}
+                  <span className="c-kw">export const</span> <span className="c-var">luisProfile</span>: <span className="c-type">EngineerProfile</span> = <span className="c-brace">{'{'}</span>{'\n'}
+                  {'  '}name: <span className="c-str">'Luis Roberto'</span>,{'\n'}
+                  {'  '}location: <span className="c-str">'Manaus / AM'</span>,{'\n'}
+                  {'  '}education: <span className="c-str">'ADS FAMETRO'</span>,{'\n'}
+                  {'  '}primaryStacks: [<span className="c-str">'React'</span>, <span className="c-str">'Node.js'</span>, <span className="c-str">'TypeScript'</span>, <span className="c-str">'Kotlin'</span>],{'\n'}
+                  {'  '}hardware_IoT: [<span className="c-str">'BioTrack'</span>, <span className="c-str">'Sensors'</span>, <span className="c-str">'Telemetry'</span>],{'\n'}
+                  {'  '}highConcurrency: [<span className="c-str">'Lua'</span>, <span className="c-str">'C'</span>, <span className="c-str">'FiveM/RedM'</span>, <span className="c-str">'VORP'</span>],{'\n'}
+                  {'  '}openToWork: <span className="c-bool">true</span>{'\n'}
+                  <span className="c-brace">{'}'}</span>;
+                </code>
+              </pre>
+            </div>
+
+            <div className="code-window-footer">
+              <div className="code-status">
+                <span className="status-indicator"></span>
+                <span>Ready for compilation · 0 errors · 0 warnings</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

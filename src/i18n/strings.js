@@ -9,11 +9,10 @@ export const strings = {
       github: "GitHub",
       contact: "Contato",
       terminal: "Terminal",
-      matrix: "Matrix",
       quiz: "Quiz Stack"
     },
     hero: {
-      eyebrow: "Disponível para novos projetos & oportunidades 🚀",
+      eyebrow: "Disponível para novos projetos & oportunidades",
       greetingMorning: "Bom dia! Eu sou",
       greetingAfternoon: "Boa tarde! Eu sou",
       greetingEvening: "Boa noite! Eu sou",
@@ -39,15 +38,15 @@ export const strings = {
       paragraphs: [
         "Sou desenvolvedor de Manaus/AM com sólida vivência em <strong>sistemas distribuídos de alta concorrência</strong>, arquitetura <strong>Web Full Stack</strong> e <strong>Mobile nativo</strong>. Minha base técnica foi forjada ao longo de 4+ anos projetando microssistemas em Lua e C para plataformas multiplayer (FiveM/RedM), onde tolerância a falhas, latência mínima e persistência de dados sob carga massiva são vitais.",
         "Possuo experiência prática atuando na <em>Aura Group</em>, refinando pipelines de QA, arquitetando soluções e reduzindo incidentes críticos em produção. Atualmente desenvolvo sistemas corporativos de gestão e atuo como instrutor técnico na <em>JGC Consultoria</em>.",
-        "Minha abordagem combina <strong>Clean Architecture</strong>, <strong>MVVM</strong>, testes rigorosos e um workflow acelerado com inteligência artificial generativa para transformar requisitos desafiadores em software escalável e de alto impacto."
+        "Minha abordagem combina <strong>Clean Architecture</strong>, <strong>MVVM</strong>, testes rigorosos e engenharia de software moderna para transformar requisitos desafiadores em software escalável e de alto impacto."
       ],
       chips: [
-        "Manaus, AM 📍",
-        "ADS — FAMETRO 🎓",
-        "Clean Architecture 📐",
-        "Alta Concorrência ⚡",
-        "QA & Testes 🛡️",
-        "Disponível para Projetos 💼"
+        "Manaus, AM",
+        "ADS — FAMETRO",
+        "Clean Architecture",
+        "Alta Concorrência",
+        "QA & Testes",
+        "Disponível para Projetos"
       ]
     },
     services: {
@@ -56,22 +55,22 @@ export const strings = {
       subtitle: "Soluções completas com excelência técnica, da concepção à produção.",
       items: [
         {
-          icon: "🌐",
+          icon: "web",
           title: "Aplicações Web Full Stack",
           description: "Desenvolvimento de plataformas web responsivas de alta performance com React, Next.js, TypeScript e Node.js, com APIs RESTful e WebSockets em tempo real."
         },
         {
-          icon: "📱",
+          icon: "mobile",
           title: "Mobile Android Nativo",
           description: "Criação de aplicativos Android modernos Offline-First com Kotlin, Jetpack Compose, Clean Architecture, MVVM, Room Database e injeção de dependências com Hilt."
         },
         {
-          icon: "⚡",
+          icon: "systems",
           title: "Sistemas Concorrentes (Lua/C)",
           description: "Engenharia de microssistemas de baixa latência e alta concorrência para plataformas multiplayer (FiveM/RedM), com persistência SQL robusta e segurança contra injeções."
         },
         {
-          icon: "🛡️",
+          icon: "qa",
           title: "Qualidade, QA & Arquitetura",
           description: "Definição de padrões de software, pipelines de CI/CD, testes automatizados, code review rigoroso e consultoria para redução de incidentes em ambientes críticos."
         }
@@ -380,12 +379,12 @@ export const strings = {
       streakTitle: "Sequência de Contribuições",
       statsTitle: "Estatísticas Gerais",
       langsTitle: "Linguagens Mais Utilizadas",
-      snakeTitle: "Snake Contribution Animation",
+      snakeTitle: "Animação de Contribuição GitHub",
       cards: [
         { label: "Repositórios Públicos", value: "25+" },
         { label: "Anos de Código Ativo", value: "4+" },
         { label: "Foco Principal", value: "Lua / TS / Kotlin" },
-        { label: "Status de Disponibilidade", value: "Open to Work 🚀" }
+        { label: "Status de Disponibilidade", value: "Open to Work" }
       ]
     },
     quiz: {
@@ -439,7 +438,7 @@ export const strings = {
     jornada: {
       title: "Jornada do Visitante",
       subtitle: "Explore as seções do portfólio para completar 100% da jornada e desbloquear meu Currículo completo!",
-      unlockedTitle: "🎉 Jornada 100% Concluída!",
+      unlockedTitle: "Jornada 100% Concluída!",
       unlockedDesc: "Excelente! Você explorou todos os pilares do meu portfólio. Baixe agora meu currículo oficial em PDF:",
       btnDownload: "Baixar Currículo Oficial (PDF)",
       tasks: {
@@ -460,7 +459,6 @@ export const strings = {
       cmdProjectsDesc: "Mostra os projetos em destaque",
       cmdCertsDesc: "Lista as certificações e graduação",
       cmdContactDesc: "Informações de contato e redes",
-      cmdMatrixDesc: "Ativa o modo Matrix Rain",
       cmdQuizDesc: "Abre o teste de afinidade de stack",
       cmdClearDesc: "Limpa o terminal",
       cmdExitDesc: "Fecha o terminal"
@@ -483,7 +481,7 @@ export const strings = {
       quote: '"A persistência na lógica e o rigor na engenharia transformam ideias em sistemas de alto impacto."',
       developed: "Desenvolvido por Luis Roberto com React & Vite. Hospedado na Vercel.",
       sourceCode: "Ver código fonte no GitHub",
-      backToTop: "Voltar ao topo ↑"
+      backToTop: "Voltar ao topo"
     }
   },
   en: {
@@ -496,11 +494,10 @@ export const strings = {
       github: "GitHub",
       contact: "Contact",
       terminal: "Terminal",
-      matrix: "Matrix",
       quiz: "Tech Quiz"
     },
     hero: {
-      eyebrow: "Open to new projects & opportunities 🚀",
+      eyebrow: "Open to new projects & opportunities",
       greetingMorning: "Good morning! I am",
       greetingAfternoon: "Good afternoon! I am",
       greetingEvening: "Good evening! I am",
@@ -526,15 +523,15 @@ export const strings = {
       paragraphs: [
         "I am a software developer based in Manaus, Brazil, with strong experience in <strong>high-concurrency distributed systems</strong>, <strong>Web Full Stack</strong> architecture, and <strong>native Mobile</strong> development. My foundation was built over 4+ years designing Lua and C micro-systems for multiplayer platforms (FiveM/RedM), where fault tolerance, sub-millisecond latency, and massive real-time data persistence are crucial.",
         "I have hands-on experience at <em>Aura Group</em>, refining QA pipelines, architecting solutions, and preventing critical incidents in high-traffic production environments. Currently, I build enterprise management software and teach technical training at <em>JGC Consultoria</em>.",
-        "My methodology combines <strong>Clean Architecture</strong>, <strong>MVVM</strong>, thorough automated testing, and a workflow augmented by generative AI to transform complex specifications into scalable, production-grade software."
+        "My methodology combines <strong>Clean Architecture</strong>, <strong>MVVM</strong>, thorough automated testing, and modern software engineering to transform complex specifications into scalable, production-grade software."
       ],
       chips: [
-        "Manaus, AM - Brazil 📍",
-        "ADS — FAMETRO 🎓",
-        "Clean Architecture 📐",
-        "High Concurrency ⚡",
-        "QA & Testing 🛡️",
-        "Open to Opportunities 💼"
+        "Manaus, AM - Brazil",
+        "ADS — FAMETRO",
+        "Clean Architecture",
+        "High Concurrency",
+        "QA & Testing",
+        "Open to Opportunities"
       ]
     },
     services: {
@@ -543,22 +540,22 @@ export const strings = {
       subtitle: "End-to-end engineering excellence from concept to scalable production.",
       items: [
         {
-          icon: "🌐",
+          icon: "web",
           title: "Full Stack Web Applications",
           description: "High-performance responsive web platforms built with React, Next.js, TypeScript, and Node.js, powered by robust RESTful APIs and real-time WebSockets."
         },
         {
-          icon: "📱",
+          icon: "mobile",
           title: "Native Android Mobile",
           description: "Modern Offline-First Android applications engineered with Kotlin, Jetpack Compose, Clean Architecture, MVVM, Room Database, and Hilt DI."
         },
         {
-          icon: "⚡",
+          icon: "systems",
           title: "Concurrent Systems (Lua/C)",
           description: "Low-latency micro-systems and game engines for multiplayer servers (FiveM/RedM), featuring robust SQL transactions and anti-injection defenses."
         },
         {
-          icon: "🛡️",
+          icon: "qa",
           title: "Quality, QA & Architecture",
           description: "Standardizing development workflows, CI/CD pipelines, automated testing, rigorous code review, and consulting to reduce critical production incidents."
         }
@@ -867,12 +864,12 @@ export const strings = {
       streakTitle: "Contribution Streak",
       statsTitle: "Overall Statistics",
       langsTitle: "Top Languages",
-      snakeTitle: "Snake Contribution Animation",
+      snakeTitle: "GitHub Contribution Animation",
       cards: [
         { label: "Public Repositories", value: "25+" },
         { label: "Active Coding Years", value: "4+" },
         { label: "Primary Focus", value: "Lua / TS / Kotlin" },
-        { label: "Availability", value: "Open to Work 🚀" }
+        { label: "Availability", value: "Open to Work" }
       ]
     },
     quiz: {
@@ -926,7 +923,7 @@ export const strings = {
     jornada: {
       title: "Visitor Journey",
       subtitle: "Explore key sections of the portfolio to reach 100% and unlock my official Resume!",
-      unlockedTitle: "🎉 Journey 100% Complete!",
+      unlockedTitle: "Journey 100% Complete!",
       unlockedDesc: "Awesome! You have explored all core sections. Download my official Resume PDF now:",
       btnDownload: "Download Official Resume (PDF)",
       tasks: {
@@ -947,7 +944,6 @@ export const strings = {
       cmdProjectsDesc: "Shows highlighted projects",
       cmdCertsDesc: "Lists certifications and education",
       cmdContactDesc: "Shows contact channels",
-      cmdMatrixDesc: "Enters Matrix Rain mode",
       cmdQuizDesc: "Opens the stack affinity quiz",
       cmdClearDesc: "Clears terminal screen",
       cmdExitDesc: "Closes terminal"
@@ -970,7 +966,7 @@ export const strings = {
       quote: '"Persistence in logic and rigor in engineering turn ideas into high-impact systems."',
       developed: "Developed by Luis Roberto with React & Vite. Hosted on Vercel.",
       sourceCode: "View source code on GitHub",
-      backToTop: "Back to top ↑"
+      backToTop: "Back to top"
     }
   }
 }

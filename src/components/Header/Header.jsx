@@ -3,9 +3,10 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import LanguageToggle from '../LanguageToggle/LanguageToggle'
 import ThemeToggle from '../ThemeToggle/ThemeToggle'
+import { Terminal, Sparkles } from 'lucide-react'
 import './Header.css'
 
-const Header = ({ onOpenTerminal, onTriggerMatrix, onOpenQuiz }) => {
+const Header = ({ onOpenTerminal, onOpenQuiz }) => {
   const { language } = useLanguage()
   const t = strings[language]
   const [progress, setProgress] = useState(0)
@@ -74,21 +75,7 @@ const Header = ({ onOpenTerminal, onTriggerMatrix, onOpenQuiz }) => {
               aria-label="Abrir Terminal CLI"
               title="Terminal CLI (Tecla T)"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />
-              </svg>
-            </button>
-
-            {/* Matrix Rain Button */}
-            <button
-              className="header-icon-btn"
-              onClick={onTriggerMatrix}
-              aria-label="Ativar Matrix Rain"
-              title="Matrix Mode"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-              </svg>
+              <Terminal size={18} />
             </button>
 
             {/* Theme Toggle */}
@@ -137,17 +124,8 @@ const Header = ({ onOpenTerminal, onTriggerMatrix, onOpenQuiz }) => {
               onOpenTerminal()
             }}
           >
-            <span>💻 Abrir Terminal CLI</span>
-          </button>
-          
-          <button
-            className="btn btn-secondary mobile-tool-btn"
-            onClick={() => {
-              handleNavClick()
-              onTriggerMatrix()
-            }}
-          >
-            <span>⚡ Matrix Rain</span>
+            <Terminal size={16} />
+            <span>Terminal CLI</span>
           </button>
 
           <button
@@ -157,7 +135,8 @@ const Header = ({ onOpenTerminal, onTriggerMatrix, onOpenQuiz }) => {
               onOpenQuiz()
             }}
           >
-            <span>🧠 Teste de Afinidade</span>
+            <Sparkles size={16} />
+            <span>Diagnóstico de Stack</span>
           </button>
         </div>
 

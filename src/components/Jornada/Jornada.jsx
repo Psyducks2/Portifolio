@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import confetti from 'canvas-confetti'
+import { CheckCircle2, HelpCircle } from 'lucide-react'
 import './Jornada.css'
 
 const Jornada = () => {
@@ -84,7 +85,13 @@ const Jornada = () => {
           <span className="progress-text">{percentage}%</span>
         </div>
         <span className="jornada-label">
-          {percentage === 100 ? '🎉 100%' : t.jornada.title.split(' ')[0]}
+          {percentage === 100 ? (
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+              <CheckCircle2 size={13} /> 100%
+            </span>
+          ) : (
+            t.jornada.title.split(' ')[0]
+          )}
         </span>
       </button>
 
@@ -143,7 +150,8 @@ const Jornada = () => {
             </a>
           ) : (
             <div className="jornada-hint">
-              <span>💡 {language === 'pt' ? 'Continue explorando para desbloquear!' : 'Keep exploring to unlock reward!'}</span>
+              <HelpCircle size={14} style={{ flexShrink: 0 }} />
+              <span>{language === 'pt' ? 'Continue explorando para desbloquear!' : 'Keep exploring to unlock reward!'}</span>
             </div>
           )}
         </div>

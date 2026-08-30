@@ -3,7 +3,7 @@ import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import './Terminal.css'
 
-const Terminal = ({ isOpen, onClose, onTriggerMatrix, onOpenQuiz }) => {
+const Terminal = ({ isOpen, onClose, onOpenQuiz }) => {
   const { language } = useLanguage()
   const t = strings[language]
   const [input, setInput] = useState('')
@@ -43,7 +43,6 @@ const Terminal = ({ isOpen, onClose, onTriggerMatrix, onOpenQuiz }) => {
             <div className="term-cmd-row"><span className="term-cmd-name">certs</span> — {t.terminal.cmdCertsDesc}</div>
             <div className="term-cmd-row"><span className="term-cmd-name">contact</span> — {t.terminal.cmdContactDesc}</div>
             <div className="term-cmd-row"><span className="term-cmd-name">quiz</span> — {t.terminal.cmdQuizDesc}</div>
-            <div className="term-cmd-row"><span className="term-cmd-name">matrix</span> — {t.terminal.cmdMatrixDesc}</div>
             <div className="term-cmd-row"><span className="term-cmd-name">clear</span> — {t.terminal.cmdClearDesc}</div>
             <div className="term-cmd-row"><span className="term-cmd-name">exit</span> — {t.terminal.cmdExitDesc}</div>
           </div>
@@ -75,12 +74,12 @@ const Terminal = ({ isOpen, onClose, onTriggerMatrix, onOpenQuiz }) => {
       case 'projects':
         response = (
           <div>
-            <p>🚀 <strong>BioTrack</strong> (IoT Climate Monitor — InovaTech FAMETRO 2026)</p>
-            <p>📱 <strong>ORYN</strong> (Modern Finance Tracker — Android Kotlin / Jetpack Compose)</p>
-            <p>🛡️ <strong>PsyAntiCheat-REDM</strong> (Open Source Security MIT — Lua / NUI / MySQL)</p>
-            <p>♿ <strong>Mover</strong> (Empregabilidade Acessível PCDs — InovaTech FAMETRO 2025)</p>
-            <p>⚡ <strong>Base Andromeda & Base Echocity</strong> (Multiplayer Server Frameworks FiveM)</p>
-            <p>⚖️ <strong>Calculadora Penal Aura</strong> & <strong>Aura Apresentações</strong></p>
+            <p>• <strong>BioTrack</strong> (IoT Climate Monitor — InovaTech FAMETRO 2026)</p>
+            <p>• <strong>ORYN</strong> (Modern Finance Tracker — Android Kotlin / Jetpack Compose)</p>
+            <p>• <strong>PsyAntiCheat-REDM</strong> (Open Source Security MIT — Lua / NUI / MySQL)</p>
+            <p>• <strong>Mover</strong> (Empregabilidade Acessível PCDs — InovaTech FAMETRO 2025)</p>
+            <p>• <strong>Base Andromeda & Base Echocity</strong> (Multiplayer Server Frameworks FiveM)</p>
+            <p>• <strong>Calculadora Penal Aura</strong> & <strong>Aura Apresentações</strong></p>
           </div>
         )
         break
@@ -89,13 +88,13 @@ const Terminal = ({ isOpen, onClose, onTriggerMatrix, onOpenQuiz }) => {
       case 'certifications':
         response = (
           <div>
-            <p>🎓 <strong>Graduação:</strong> ADS @ FAMETRO (Análise e Desenvolvimento de Sistemas)</p>
-            <p>📜 <strong>Microsoft:</strong> Azure AI Fundamentals (AI-900)</p>
-            <p>📜 <strong>Cisco:</strong> Introduction to Cybersecurity</p>
-            <p>📜 <strong>AWS:</strong> AWS na Prática (Cursa)</p>
-            <p>📜 <strong>QA:</strong> Testes de Software & QA (Cursa)</p>
-            <p>📜 <strong>Data:</strong> Power BI Prático (JGC Consultoria)</p>
-            <p>📜 <strong>LinkedIn:</strong> Fundamentos de Cibersegurança & InfoSec</p>
+            <p>• <strong>Graduação:</strong> ADS @ FAMETRO (Análise e Desenvolvimento de Sistemas)</p>
+            <p>• <strong>Microsoft:</strong> Azure AI Fundamentals (AI-900)</p>
+            <p>• <strong>Cisco:</strong> Introduction to Cybersecurity</p>
+            <p>• <strong>AWS:</strong> AWS na Prática (Cursa)</p>
+            <p>• <strong>QA:</strong> Testes de Software & QA (Cursa)</p>
+            <p>• <strong>Data:</strong> Power BI Prático (JGC Consultoria)</p>
+            <p>• <strong>LinkedIn:</strong> Fundamentos de Cibersegurança & InfoSec</p>
           </div>
         )
         break
@@ -103,28 +102,20 @@ const Terminal = ({ isOpen, onClose, onTriggerMatrix, onOpenQuiz }) => {
       case 'contact':
         response = (
           <div>
-            <p>📧 Email: <a href="mailto:linsroberto2016@gmail.com" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>linsroberto2016@gmail.com</a></p>
-            <p>📱 Telefone/WhatsApp: <a href="https://wa.me/5592981309985" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>(92) 98130-9985</a></p>
-            <p>💼 LinkedIn: <a href="https://www.linkedin.com/in/luis-roberto-4aa69b30a/" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>/in/luis-roberto-4aa69b30a</a></p>
-            <p>🐙 GitHub: <a href="https://github.com/Psyducks2" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>github.com/Psyducks2</a></p>
+            <p>Email: <a href="mailto:linsroberto2016@gmail.com" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>linsroberto2016@gmail.com</a></p>
+            <p>Telefone/WhatsApp: <a href="https://wa.me/5592981309985" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>(92) 98130-9985</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-roberto-4aa69b30a/" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>/in/luis-roberto-4aa69b30a</a></p>
+            <p>GitHub: <a href="https://github.com/Psyducks2" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>github.com/Psyducks2</a></p>
           </div>
         )
         break
 
       case 'quiz':
-        response = <span>{language === 'pt' ? 'Iniciando teste de afinidade...' : 'Launching tech affinity quiz...'}</span>
+        response = <span>{language === 'pt' ? 'Iniciando diagnóstico técnico...' : 'Launching tech affinity diagnosis...'}</span>
         setTimeout(() => {
           if (onOpenQuiz) onOpenQuiz()
           onClose()
         }, 600)
-        break
-
-      case 'matrix':
-        response = <span>{language === 'pt' ? 'Conectando à Matrix...' : 'Connecting to the Matrix...'}</span>
-        setTimeout(() => {
-          if (onTriggerMatrix) onTriggerMatrix()
-          onClose()
-        }, 700)
         break
 
       case 'clear':

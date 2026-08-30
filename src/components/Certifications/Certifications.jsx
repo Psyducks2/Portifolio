@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import { initSpotlight } from '../../utils/spotlight'
+import { GraduationCap } from 'lucide-react'
 import './Certifications.css'
 
 const Certifications = () => {
@@ -42,7 +43,7 @@ const Certifications = () => {
         {/* Academic Degree Highlight Card */}
         <div className="education-banner card spotlight-card" data-aos="fade-up">
           <div className="edu-icon-wrap">
-            <span className="edu-icon">🎓</span>
+            <GraduationCap size={28} className="edu-icon-svg" />
           </div>
           <div className="edu-content">
             <div className="edu-badge-row">

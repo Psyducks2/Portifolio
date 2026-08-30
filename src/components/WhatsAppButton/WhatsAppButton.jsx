@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { MessageSquare } from 'lucide-react'
 import './WhatsAppButton.css'
 
 const WhatsAppButton = () => {
@@ -20,7 +21,10 @@ const WhatsAppButton = () => {
   return (
     <div className="whatsapp-wrapper">
       <div className={`wa-bubble ${showNotification ? 'wa-bubble--show' : ''}`}>
-        <span>👋 {language === 'pt' ? 'Vamos conversar sobre seu projeto?' : 'Let’s talk about your project?'}</span>
+        <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+          <MessageSquare size={14} />
+          {language === 'pt' ? 'Vamos conversar sobre seu projeto?' : 'Let’s talk about your project?'}
+        </span>
         <button
           onClick={(e) => {
             e.preventDefault()

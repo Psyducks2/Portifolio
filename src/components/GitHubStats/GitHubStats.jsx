@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import { initSpotlight } from '../../utils/spotlight'
+import { Zap, BarChart2, Activity } from 'lucide-react'
 import './GitHubStats.css'
 
 const GitHubStats = () => {
@@ -35,7 +36,10 @@ const GitHubStats = () => {
         <div className="gh-bento-grid">
           {/* Streak Card */}
           <div className="gh-bento-item gh-bento-streak card spotlight-card" data-aos="fade-up">
-            <h3 className="gh-bento-title">⚡ {t.githubStats.streakTitle}</h3>
+            <h3 className="gh-bento-title">
+              <Zap size={18} className="gh-bento-icon" />
+              <span>{t.githubStats.streakTitle}</span>
+            </h3>
             <div className="gh-img-wrapper">
               <img
                 src="https://streak-stats.demolab.com?user=Psyducks2&theme=tokyonight&hide_border=true&date_format=j%20M%5B%20Y%5D"
@@ -48,7 +52,10 @@ const GitHubStats = () => {
 
           {/* Top Languages & Overview Card */}
           <div className="gh-bento-item gh-bento-langs card spotlight-card" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="gh-bento-title">📊 {t.githubStats.langsTitle}</h3>
+            <h3 className="gh-bento-title">
+              <BarChart2 size={18} className="gh-bento-icon" />
+              <span>{t.githubStats.langsTitle}</span>
+            </h3>
             <div className="gh-img-wrapper">
               <img
                 src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=Psyducks2&layout=compact&theme=tokyonight&hide_border=true"
@@ -62,7 +69,10 @@ const GitHubStats = () => {
           {/* Snake Contribution Grid */}
           <div className="gh-bento-item gh-bento-snake card spotlight-card" data-aos="fade-up" data-aos-delay="150">
             <div className="gh-snake-header">
-              <h3 className="gh-bento-title">🐍 {t.githubStats.snakeTitle}</h3>
+              <h3 className="gh-bento-title">
+                <Activity size={18} className="gh-bento-icon" />
+                <span>{t.githubStats.snakeTitle}</span>
+              </h3>
               <a
                 href={t.githubStats.profileUrl}
                 target="_blank"

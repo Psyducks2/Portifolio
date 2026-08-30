@@ -1,25 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* ==========================================================================
-   DESIGN TOKENS & PALETTE (DARK DEFAULT)
+   DESIGN TOKENS & PALETTE (DARK DEFAULT - SLEEK TECH AESTHETIC)
    ========================================================================== */
 :root {
-  --bg: #07090f;
-  --surface: #0d1526;
-  --card: #111e31;
-  --card-hover: #16263d;
-  --border: #1e3048;
+  --bg: #070a12;
+  --surface: #0c1220;
+  --card: #101828;
+  --card-hover: #152035;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(56, 189, 248, 0.3);
 
-  --sky: #0ea5e9;
+  --sky: #0284c7;
   --sky-light: #38bdf8;
-  --sky-dim: rgba(14, 165, 233, 0.14);
+  --sky-dim: rgba(56, 189, 248, 0.1);
 
   --amber: #f59e0b;
-  --amber-dim: rgba(245, 158, 11, 0.12);
+  --amber-dim: rgba(245, 158, 11, 0.1);
 
-  --text: #e8edf3;
+  --text: #f1f5f9;
   --text-mid: #94a3b8;
-  --text-dim: #4b6180;
+  --text-dim: #64748b;
 
   /* Typography */
   --font-heading: 'Plus Jakarta Sans', sans-serif;
@@ -31,7 +32,7 @@
   --max-width: 1200px;
   --radius: 12px;
   --radius-lg: 20px;
-  --transition: 0.25s ease;
+  --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================================
@@ -43,13 +44,14 @@
   --card: #ffffff;
   --card-hover: #f8fafc;
   --border: rgba(148, 163, 184, 0.25);
+  --border-hover: rgba(2, 132, 199, 0.35);
 
   --sky: #0284c7;
   --sky-light: #0ea5e9;
-  --sky-dim: rgba(2, 132, 199, 0.1);
+  --sky-dim: rgba(2, 132, 199, 0.08);
 
   --amber: #d97706;
-  --amber-dim: rgba(217, 119, 6, 0.1);
+  --amber-dim: rgba(217, 119, 6, 0.08);
 
   --text: #0f172a;
   --text-mid: #475569;
@@ -112,28 +114,30 @@ button {
   font-family: var(--mono);
   font-size: clamp(3.5rem, 8vw, 7rem);
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.015);
   pointer-events: none;
   user-select: none;
   line-height: 1;
 }
 
 [data-theme="light"] .section-bg-num {
-  color: rgba(0, 0, 0, 0.03);
+  color: rgba(0, 0, 0, 0.025);
 }
 
 .section-tag {
-  display: inline-block;
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   color: var(--sky-light);
   background: var(--sky-dim);
-  padding: 4px 14px;
+  padding: 5px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(14, 165, 233, 0.25);
-  margin-bottom: 0.75rem;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  margin-bottom: 0.85rem;
 }
 
 .section-title {
@@ -171,27 +175,28 @@ button {
 }
 
 .btn-primary {
-  background: var(--sky);
+  background: linear-gradient(135deg, var(--sky), #0284c7);
   color: #ffffff;
-  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.35);
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.3);
 }
 
 .btn-primary:hover {
-  background: var(--sky-light);
+  background: linear-gradient(135deg, var(--sky-light), var(--sky));
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.5);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
   color: #ffffff;
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.04);
   border-color: var(--border);
   color: var(--text);
+  backdrop-filter: blur(10px);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--sky);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--sky-light);
   color: var(--sky-light);
   transform: translateY(-2px);
 }
@@ -208,13 +213,13 @@ button {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--sky-light), var(--amber));
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* ==========================================================================
-   SPOTLIGHT CARDS (Glassmorphism & Interactive Glow)
+   SPOTLIGHT CARDS (Glassmorphism & Professional Cards)
    ========================================================================== */
 .card {
   position: relative;
@@ -222,6 +227,13 @@ button {
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .spotlight-card {
@@ -234,7 +246,7 @@ button {
   inset: -1px;
   background: radial-gradient(
     400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(56, 189, 248, 0.18),
+    rgba(56, 189, 248, 0.12),
     transparent 60%
   );
   border-radius: inherit;
@@ -260,12 +272,12 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--sky);
+  background: var(--sky-light);
 }
 
 ::selection {

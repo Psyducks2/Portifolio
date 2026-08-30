@@ -19,12 +19,10 @@ import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton'
 import Jornada from './components/Jornada/Jornada'
 import MouseSpotlight from './components/MouseSpotlight/MouseSpotlight'
 import Terminal from './components/Terminal/Terminal'
-import MatrixEffect from './components/MatrixEffect/MatrixEffect'
 import AffinityQuiz from './components/AffinityQuiz/AffinityQuiz'
 
 function App() {
   const [terminalOpen, setTerminalOpen] = useState(false)
-  const [matrixOpen, setMatrixOpen] = useState(false)
   const [quizOpen, setQuizOpen] = useState(false)
 
   // ScrollReveal animation initializer
@@ -43,20 +41,12 @@ function App() {
     return () => observer.disconnect()
   }, [])
 
-  // Konami Code & Keyboard Shortcuts
+  // Keyboard Shortcuts
   useEffect(() => {
-    const konamiSequence = [
-      'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-      'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-      'b', 'a'
-    ]
-    let konamiIndex = 0
-
     const handleKeyDown = (e) => {
       // Escape closes modals
       if (e.key === 'Escape') {
         setTerminalOpen(false)
-        setMatrixOpen(false)
         setQuizOpen(false)
       }
 
@@ -66,27 +56,16 @@ function App() {
 
       // Terminal shortcut 't'
       if (e.key === 't' || e.key === 'T') {
-        if (!matrixOpen && !quizOpen) {
+        if (!quizOpen) {
           e.preventDefault()
           setTerminalOpen(prev => !prev)
         }
-      }
-
-      // Konami Code sequence tracker
-      if (e.key.toLowerCase() === konamiSequence[konamiIndex].toLowerCase()) {
-        konamiIndex++
-        if (konamiIndex === konamiSequence.length) {
-          setMatrixOpen(true)
-          konamiIndex = 0
-        }
-      } else {
-        konamiIndex = 0
       }
     }
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [matrixOpen, quizOpen])
+  }, [quizOpen])
 
   return (
     <LanguageProvider>
@@ -95,7 +74,6 @@ function App() {
 
         <Header
           onOpenTerminal={() => setTerminalOpen(true)}
-          onTriggerMatrix={() => setMatrixOpen(true)}
           onOpenQuiz={() => setQuizOpen(true)}
         />
 
@@ -125,13 +103,8 @@ function App() {
         <Terminal
           isOpen={terminalOpen}
           onClose={() => setTerminalOpen(false)}
-          onTriggerMatrix={() => setMatrixOpen(true)}
           onOpenQuiz={() => setQuizOpen(true)}
         />
-
-        {matrixOpen && (
-          <MatrixEffect onClose={() => setMatrixOpen(false)} />
-        )}
 
         <AffinityQuiz
           isOpen={quizOpen}

@@ -1,5 +1,6 @@
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { Sparkles, Terminal } from 'lucide-react'
 import './Hero.css'
 
 const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
@@ -65,9 +66,7 @@ const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
               title="Abrir Terminal CLI"
               aria-label="Abrir Terminal CLI"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
-                <polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" />
-              </svg>
+              <Terminal size={16} />
               <span>CLI</span>
             </button>
 
@@ -77,7 +76,8 @@ const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
               title="Teste de Afinidade de Stack"
               aria-label="Teste de Afinidade de Stack"
             >
-              <span>🧠 Quiz</span>
+              <Sparkles size={16} />
+              <span>Quiz</span>
             </button>
           </div>
 
@@ -117,8 +117,8 @@ const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
                 <code>
                   <span className="c-kw">interface</span> <span className="c-type">EngineerProfile</span> <span className="c-brace">{'{'}</span>{'\n'}
                   {'  '}name: <span className="c-str">'Luis Roberto'</span>;{'\n'}
-                  {'  '}location: <span className="c-str">'Manaus, AM - Brasil 📍'</span>;{'\n'}
-                  {'  '}education: <span className="c-str">'ADS @ FAMETRO 🎓'</span>;{'\n'}
+                  {'  '}location: <span className="c-str">'Manaus, AM - Brasil'</span>;{'\n'}
+                  {'  '}education: <span className="c-str">'ADS @ FAMETRO'</span>;{'\n'}
                   {'  '}primaryStacks: <span className="c-type">string</span>[];{'\n'}
                   {'  '}hardware_IoT: <span className="c-type">string</span>[];{'\n'}
                   {'  '}highConcurrency: <span className="c-type">string</span>[];{'\n'}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import confetti from 'canvas-confetti'
+import { SlidersHorizontal, Target } from 'lucide-react'
 import './AffinityQuiz.css'
 
 const AffinityQuiz = ({ isOpen, onClose }) => {
@@ -71,7 +72,9 @@ const AffinityQuiz = ({ isOpen, onClose }) => {
         {step === 'start' && (
           <div className="quiz-start">
             <div className="quiz-badge-tag">{quizData.tag}</div>
-            <div className="quiz-icon-hero">🧠</div>
+            <div className="quiz-icon-hero">
+              <SlidersHorizontal size={36} color="var(--sky-light)" />
+            </div>
             <h2 className="quiz-title">{quizData.title}</h2>
             <p className="quiz-desc">{quizData.subtitle}</p>
             <button className="btn btn-primary" onClick={handleStart}>
@@ -106,7 +109,9 @@ const AffinityQuiz = ({ isOpen, onClose }) => {
 
         {step === 'result' && (
           <div className="quiz-result">
-            <div className="result-icon">🎯</div>
+            <div className="result-icon">
+              <Target size={36} color="var(--amber)" />
+            </div>
             <h2 className="quiz-title">{quizData.resultTitle}</h2>
             <p className="quiz-desc">{quizData.resultSubtitle}</p>
 

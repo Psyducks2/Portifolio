@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
+import { GraduationCap, MapPin, Layers, Zap, ShieldCheck, Briefcase } from 'lucide-react'
 import './About.css'
 
 const About = () => {
@@ -23,6 +24,15 @@ const About = () => {
 
     return () => observer.disconnect()
   }, [])
+
+  const chipIcons = [
+    <MapPin key="map" size={14} />,
+    <GraduationCap key="grad" size={14} />,
+    <Layers key="layers" size={14} />,
+    <Zap key="zap" size={14} />,
+    <ShieldCheck key="shield" size={14} />,
+    <Briefcase key="brief" size={14} />
+  ]
 
   return (
     <section id="about" className="about section">
@@ -59,7 +69,8 @@ const About = () => {
                     {t.about.badgeAvailable}
                   </span>
                   <span className="avatar-badge avatar-badge--edu">
-                    🎓 {t.about.badgeEducation}
+                    <GraduationCap size={14} style={{ marginRight: '4px' }} />
+                    {t.about.badgeEducation}
                   </span>
                 </div>
               </div>
@@ -74,7 +85,10 @@ const About = () => {
 
             <div className="about-chips-wrapper">
               {t.about.chips.map((chip, index) => (
-                <span className="about-chip" key={index}>{chip}</span>
+                <span className="about-chip" key={index}>
+                  {chipIcons[index % chipIcons.length]}
+                  <span>{chip}</span>
+                </span>
               ))}
             </div>
 

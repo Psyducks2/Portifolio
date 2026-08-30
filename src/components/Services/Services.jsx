@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import { initSpotlight } from '../../utils/spotlight'
+import { Globe, Smartphone, Zap, ShieldCheck } from 'lucide-react'
 import './Services.css'
 
 const Services = () => {
@@ -12,6 +13,21 @@ const Services = () => {
     const cleanup = initSpotlight()
     return () => cleanup()
   }, [])
+
+  const renderServiceIcon = (iconKey) => {
+    switch (iconKey) {
+      case 'web':
+        return <Globe size={26} />
+      case 'mobile':
+        return <Smartphone size={26} />
+      case 'systems':
+        return <Zap size={26} />
+      case 'qa':
+        return <ShieldCheck size={26} />
+      default:
+        return <Globe size={26} />
+    }
+  }
 
   return (
     <section id="services" className="services section">
@@ -30,7 +46,7 @@ const Services = () => {
               data-aos-delay={index * 80}
             >
               <div className="service-icon-wrap">
-                <span className="service-icon-emoji">{service.icon}</span>
+                {renderServiceIcon(service.icon)}
               </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>

@@ -1,6 +1,6 @@
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
-import { Sparkles, Terminal } from 'lucide-react'
+import { Sparkles, Terminal, FileText } from 'lucide-react'
 import './Hero.css'
 
 const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
@@ -55,6 +55,15 @@ const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
               </svg>
             </a>
             
+            <a
+              href="/curriculo.pdf"
+              download="Luis_Roberto_Curriculo.pdf"
+              className="btn btn-secondary"
+            >
+              <FileText size={16} />
+              <span>{t.hero.btnCV}</span>
+            </a>
+
             <a href="#contact" className="btn btn-secondary">
               {t.hero.btnContact}
             </a>

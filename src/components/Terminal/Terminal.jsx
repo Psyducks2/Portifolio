@@ -61,12 +61,14 @@ const Terminal = ({ isOpen, onClose, onOpenQuiz }) => {
       case 'skills':
         response = (
           <div>
-            <p><strong>Frontend:</strong> React, Next.js, TypeScript, JavaScript, TailwindCSS</p>
-            <p><strong>Backend & Cloud:</strong> Node.js, Express.js, AWS, REST APIs, WebSockets</p>
-            <p><strong>Mobile:</strong> Kotlin, Android SDK, Jetpack Compose, Room DB, Hilt</p>
-            <p><strong>Sistemas & Concorrência:</strong> Lua (4+ anos), C, FiveM, RedM (VORP), Linux</p>
-            <p><strong>Bancos de Dados:</strong> MySQL, SQL Modelagem, Firebase</p>
-            <p><strong>QA & Ferramentas:</strong> Software Testing, Power BI, Git, Clean Architecture</p>
+            <p><strong>Frontend:</strong> React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML5/CSS3</p>
+            <p><strong>Backend & Scripting:</strong> Node.js, TypeScript, Lua (4+ anos), C Language, REST APIs, Express.js</p>
+            <p><strong>Automação & IA:</strong> Bots WhatsApp, N8N, Typebot, Evolution API, Cursor AI, Claude, Gemini CLI</p>
+            <p><strong>Multiplayer & Concorrência:</strong> RedM (450+ players), FiveM Engine, VORP Core, NUI, Ticks, Linux</p>
+            <p><strong>Bancos de Dados:</strong> SQL Modelagem, MySQL, Firebase, oxmysql, AWS Cloud</p>
+            <p><strong>Business & Analytics:</strong> Power BI, Excel Avançado, Rotinas Administrativas, Gestão</p>
+            <p><strong>QA & Metodologias:</strong> Testes de Software, Clean Architecture, Git/GitHub, Metodologias Ágeis</p>
+            <p><strong>Mobile:</strong> Kotlin, Jetpack Compose, Room DB, Hilt, MVVM</p>
           </div>
         )
         break
@@ -75,10 +77,12 @@ const Terminal = ({ isOpen, onClose, onOpenQuiz }) => {
         response = (
           <div>
             <p>• <strong>BioTrack</strong> (IoT Climate Monitor — InovaTech FAMETRO 2026)</p>
-            <p>• <strong>ORYN</strong> (Modern Finance Tracker — Android Kotlin / Jetpack Compose)</p>
-            <p>• <strong>PsyAntiCheat-REDM</strong> (Open Source Security MIT — Lua / NUI / MySQL)</p>
+            <p>• <strong>Total Look</strong> (Sistema de Gestão & Licenciamento Digital — 2026)</p>
             <p>• <strong>Mover</strong> (Empregabilidade Acessível PCDs — InovaTech FAMETRO 2025)</p>
-            <p>• <strong>Base Andromeda & Base Echocity</strong> (Multiplayer Server Frameworks FiveM)</p>
+            <p>• <strong>ORYN</strong> (Modern Finance Tracker — Android Kotlin / Compose)</p>
+            <p>• <strong>PsyAntiCheat-REDM</strong> (Open Source Security MIT — Lua / NUI / MySQL)</p>
+            <p>• <strong>ArrowLabs WhatsApp Bot & CRM</strong> (N8N, Typebot & Evolution API)</p>
+            <p>• <strong>Base Andromeda</strong> (Multiplayer Server Framework FiveM)</p>
             <p>• <strong>Calculadora Penal Aura</strong> & <strong>Aura Apresentações</strong></p>
           </div>
         )
@@ -88,13 +92,15 @@ const Terminal = ({ isOpen, onClose, onOpenQuiz }) => {
       case 'certifications':
         response = (
           <div>
-            <p>• <strong>Graduação:</strong> ADS @ FAMETRO (Análise e Desenvolvimento de Sistemas)</p>
+            <p>• <strong>Graduação:</strong> ADS @ FAMETRO (Análise de Dados, Sistemas & QA — 2025-2027)</p>
             <p>• <strong>Microsoft:</strong> Azure AI Fundamentals (AI-900)</p>
             <p>• <strong>Cisco:</strong> Introduction to Cybersecurity</p>
-            <p>• <strong>AWS:</strong> AWS na Prática (Cursa)</p>
-            <p>• <strong>QA:</strong> Testes de Software & QA (Cursa)</p>
-            <p>• <strong>Data:</strong> Power BI Prático (JGC Consultoria)</p>
-            <p>• <strong>LinkedIn:</strong> Fundamentos de Cibersegurança & InfoSec</p>
+            <p>• <strong>LinkedIn Learning:</strong> Cibersegurança & Segurança da Informação</p>
+            <p>• <strong>Cursa Academy:</strong> Testes de Software & QA + AWS na Prática</p>
+            <p>• <strong>JGC Consultoria:</strong> Power BI 100% na Prática + Rotinas Administrativas</p>
+            <p>• <strong>JGC Consultoria:</strong> Excel Avançado + Informática Avançada</p>
+            <p>• <strong>Yes Idiomas:</strong> Inglês Avançado (Fluência — 7 anos)</p>
+            <p>• <strong>CETAM:</strong> Informática Básica & Fundamentos de Computação</p>
           </div>
         )
         break
@@ -104,7 +110,7 @@ const Terminal = ({ isOpen, onClose, onOpenQuiz }) => {
           <div>
             <p>Email: <a href="mailto:linsroberto2016@gmail.com" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>linsroberto2016@gmail.com</a></p>
             <p>Telefone/WhatsApp: <a href="https://wa.me/5592981309985" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>(92) 98130-9985</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/luis-roberto-4aa69b30a/" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>/in/luis-roberto-4aa69b30a</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/luisrobertodev/" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>/in/luisrobertodev</a></p>
             <p>GitHub: <a href="https://github.com/Psyducks2" target="_blank" rel="noreferrer" style={{ color: 'var(--sky)' }}>github.com/Psyducks2</a></p>
           </div>
         )

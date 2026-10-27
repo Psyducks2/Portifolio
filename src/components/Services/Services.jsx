@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import { initSpotlight } from '../../utils/spotlight'
-import { Globe, Smartphone, Zap, ShieldCheck } from 'lucide-react'
+import { Globe, Smartphone, Zap, ShieldCheck, Cpu, BarChart3 } from 'lucide-react'
 import './Services.css'
 
 const Services = () => {
@@ -18,12 +18,16 @@ const Services = () => {
     switch (iconKey) {
       case 'web':
         return <Globe size={26} />
-      case 'mobile':
-        return <Smartphone size={26} />
+      case 'automation':
+        return <Cpu size={26} />
       case 'systems':
         return <Zap size={26} />
       case 'qa':
         return <ShieldCheck size={26} />
+      case 'data':
+        return <BarChart3 size={26} />
+      case 'mobile':
+        return <Smartphone size={26} />
       default:
         return <Globe size={26} />
     }

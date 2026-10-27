@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
-import { GraduationCap, MapPin, Layers, Zap, ShieldCheck, Briefcase } from 'lucide-react'
+import { GraduationCap, MapPin, Layers, Zap, ShieldCheck, Briefcase, BarChart3 } from 'lucide-react'
 import './About.css'
 
 const About = () => {
@@ -31,6 +31,7 @@ const About = () => {
     <Layers key="layers" size={14} />,
     <Zap key="zap" size={14} />,
     <ShieldCheck key="shield" size={14} />,
+    <BarChart3 key="chart" size={14} />,
     <Briefcase key="brief" size={14} />
   ]
 

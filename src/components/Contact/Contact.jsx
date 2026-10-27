@@ -97,10 +97,10 @@ const Contact = () => {
               </div>
               <span className="contact-card-label">LinkedIn</span>
             </div>
-            <div className="contact-card-value">Luis Roberto</div>
+            <div className="contact-card-value">in/luisrobertodev</div>
             <div className="contact-card-actions">
               <a
-                href="https://www.linkedin.com/in/luis-roberto-4aa69b30a/"
+                href="https://www.linkedin.com/in/luisrobertodev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-btn-action"

@@ -1,13 +1,14 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useLanguage } from '../../contexts/LanguageContext'
 import { strings } from '../../i18n/strings'
 import { initSpotlight } from '../../utils/spotlight'
-import { GraduationCap } from 'lucide-react'
+import { GraduationCap, Award, CheckCircle } from 'lucide-react'
 import './Certifications.css'
 
 const Certifications = () => {
   const { language } = useLanguage()
   const t = strings[language]
+  const [activeFilter, setActiveFilter] = useState('all')
 
   useEffect(() => {
     const cleanup = initSpotlight()
@@ -30,7 +31,19 @@ const Certifications = () => {
       cleanup()
       observer.disconnect()
     }
-  }, [])
+  }, [activeFilter])
+
+  const filters = [
+    { id: 'all', label: t.certifications.filterAll },
+    { id: 'ai', label: t.certifications.filterAi },
+    { id: 'security', label: t.certifications.filterSecurity },
+    { id: 'business', label: t.certifications.filterBusiness },
+    { id: 'core', label: t.certifications.filterCore }
+  ]
+
+  const filteredCerts = activeFilter === 'all'
+    ? t.certifications.items
+    : t.certifications.items.filter(c => c.category === activeFilter)
 
   return (
     <section id="certifications" className="certifications section">
@@ -43,7 +56,7 @@ const Certifications = () => {
         {/* Academic Degree Highlight Card */}
         <div className="education-banner card spotlight-card" data-aos="fade-up">
           <div className="edu-icon-wrap">
-            <GraduationCap size={28} className="edu-icon-svg" />
+            <GraduationCap size={32} className="edu-icon-svg" />
           </div>
           <div className="edu-content">
             <div className="edu-badge-row">
@@ -61,31 +74,57 @@ const Certifications = () => {
           </div>
         </div>
 
+        {/* Category Filters */}
+        <div className="certs-filters" data-aos="fade-up">
+          {filters.map((filter) => (
+            <button
+              key={filter.id}
+              className={`filter-pill${activeFilter === filter.id ? ' active' : ''}`}
+              onClick={() => setActiveFilter(filter.id)}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </div>
+
         {/* Certifications Grid */}
         <div className="certs-grid">
-          {t.certifications.items.map((cert, index) => (
+          {filteredCerts.map((cert, index) => (
             <div
               key={index}
               className="cert-card card spotlight-card"
               data-aos="fade-up"
-              data-aos-delay={index * 80}
+              data-aos-delay={index * 50}
             >
               <div className="cert-card-header">
-                <div className="cert-badge-pill" style={{ borderColor: `${cert.color}60`, color: cert.color }}>
+                <div
+                  className="cert-badge-pill"
+                  style={{
+                    borderColor: `${cert.color}70`,
+                    color: cert.color,
+                    background: `${cert.color}15`
+                  }}
+                >
+                  <Award size={13} style={{ marginRight: '4px' }} />
                   {cert.badge}
                 </div>
-                <div className="cert-issuer-name">{cert.issuer}</div>
+                {cert.date && (
+                  <span className="cert-date-tag">{cert.date}</span>
+                )}
               </div>
               
               <h3 className="cert-title">{cert.title}</h3>
               <p className="cert-desc">{cert.desc}</p>
               
               <div className="cert-card-footer">
-                <div className="cert-verified-tag">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style={{ color: cert.color }}>
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                  </svg>
-                  <span>{language === 'pt' ? 'Certificação Verificada' : 'Verified Credential'}</span>
+                <div className="cert-issuer-info">
+                  <div className="cert-verified-tag">
+                    <CheckCircle size={14} style={{ color: cert.color, flexShrink: 0 }} />
+                    <span className="cert-issuer-name">{cert.issuer}</span>
+                  </div>
+                  <span className="cert-verified-label">
+                    {language === 'pt' ? 'Verificado' : 'Verified'}
+                  </span>
                 </div>
               </div>
             </div>

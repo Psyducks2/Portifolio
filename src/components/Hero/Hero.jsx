@@ -126,20 +126,22 @@ const Hero = ({ onOpenTerminal, onOpenQuiz }) => {
                 <code>
                   <span className="c-kw">interface</span> <span className="c-type">EngineerProfile</span> <span className="c-brace">{'{'}</span>{'\n'}
                   {'  '}name: <span className="c-str">'Luis Roberto'</span>;{'\n'}
+                  {'  '}role: <span className="c-str">'Full Stack & Analista'</span>;{'\n'}
                   {'  '}location: <span className="c-str">'Manaus, AM - Brasil'</span>;{'\n'}
-                  {'  '}education: <span className="c-str">'ADS @ FAMETRO'</span>;{'\n'}
+                  {'  '}education: <span className="c-str">'ADS @ FAMETRO (2025-2027)'</span>;{'\n'}
                   {'  '}primaryStacks: <span className="c-type">string</span>[];{'\n'}
-                  {'  '}hardware_IoT: <span className="c-type">string</span>[];{'\n'}
+                  {'  '}automations_BI: <span className="c-type">string</span>[];{'\n'}
                   {'  '}highConcurrency: <span className="c-type">string</span>[];{'\n'}
                   {'  '}openToWork: <span className="c-bool">boolean</span>;{'\n'}
                   <span className="c-brace">{'}'}</span>{'\n\n'}
                   <span className="c-kw">export const</span> <span className="c-var">luisProfile</span>: <span className="c-type">EngineerProfile</span> = <span className="c-brace">{'{'}</span>{'\n'}
                   {'  '}name: <span className="c-str">'Luis Roberto'</span>,{'\n'}
+                  {'  '}role: <span className="c-str">'Full Stack & Analista'</span>,{'\n'}
                   {'  '}location: <span className="c-str">'Manaus / AM'</span>,{'\n'}
                   {'  '}education: <span className="c-str">'ADS FAMETRO'</span>,{'\n'}
-                  {'  '}primaryStacks: [<span className="c-str">'React'</span>, <span className="c-str">'Node.js'</span>, <span className="c-str">'TypeScript'</span>, <span className="c-str">'Kotlin'</span>],{'\n'}
-                  {'  '}hardware_IoT: [<span className="c-str">'BioTrack'</span>, <span className="c-str">'Sensors'</span>, <span className="c-str">'Telemetry'</span>],{'\n'}
-                  {'  '}highConcurrency: [<span className="c-str">'Lua'</span>, <span className="c-str">'C'</span>, <span className="c-str">'FiveM/RedM'</span>, <span className="c-str">'VORP'</span>],{'\n'}
+                  {'  '}primaryStacks: [<span className="c-str">'React'</span>, <span className="c-str">'Next.js'</span>, <span className="c-str">'Node.js'</span>, <span className="c-str">'TypeScript'</span>],{'\n'}
+                  {'  '}automations_BI: [<span className="c-str">'N8N'</span>, <span className="c-str">'Typebot'</span>, <span className="c-str">'WhatsApp API'</span>, <span className="c-str">'Power BI'</span>],{'\n'}
+                  {'  '}highConcurrency: [<span className="c-str">'Lua (4+ anos)'</span>, <span className="c-str">'RedM (450+ players)'</span>, <span className="c-str">'FiveM'</span>],{'\n'}
                   {'  '}openToWork: <span className="c-bool">true</span>{'\n'}
                   <span className="c-brace">{'}'}</span>;
                 </code>
